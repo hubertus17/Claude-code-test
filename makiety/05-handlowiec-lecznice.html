@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Moje lecznice – panel handlowca · VetSpot</title>
+<link rel="stylesheet" href="assets/vetspot.css">
+<style>
+    .bar{display:flex;gap:12px;margin-bottom:24px;padding-right:396px}
+    .bar .input{flex:1;max-width:520px}
+    .newrow td{background:var(--sig-wash)}
+    .os-note{top:20px;right:24px}
+    .os-a{display:flex;gap:10px;align-items:center;font-size:12px;color:#6e6e73;margin-bottom:8px}
+    .os-a img{width:18px;height:18px}
+    .os-b{display:flex;gap:12px}
+    .os-b b{font-size:14px;display:block;margin-bottom:2px}
+    .os-b p{font-size:13px;line-height:1.35;color:#3a3a3c}
+    .os-btns{display:flex;gap:8px;margin-top:12px}
+    .os-btns span{flex:1;height:30px;border-radius:7px;background:#e3e3e6;display:grid;place-items:center;font-size:13px;font-weight:600}
+    .os-btns span.p{background:#123a63;color:#fff}
+    .ctx-sum{display:flex;gap:28px;font-size:13.5px;color:var(--ink-2)}
+    .ctx-sum b{color:var(--ink)}
+    </style>
+</head>
+<body>
+<div class="app" style="position:relative">
+<aside class="side">
+  <img class="logo" src="assets/vetspot-logo-white.svg" alt="VetSpot">
+  <div class="ctx">Panel handlowca · region Wielkopolska</div>
+  <nav><a href="#" class="on"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M12 9v6"/><path d="M9 12h6"/><path d="M2 21h20"/></svg>Moje lecznice<span class="badge">1</span></a><a href="#"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14"/><path d="m21 3-7 18-4-7-7-4z"/></svg>Oferty</a><a href="#"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="14"/><path d="M3 10h18"/><path d="M16 15h2"/></svg>Należności<span class="badge">3</span></a><a href="#"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>Prowizje lecznic</a><a href="#"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15v2"/><path d="M11 10v7"/><path d="M15 12v5"/><path d="M19 6v11"/></svg>Sprzedaż</a></nav>
+  <div class="me"><span class="av">MZ</span><div><b>Marek Zieliński</b>Przedstawiciel handlowy</div></div>
+</aside>
+<main class="main">
+  <div class="top" style="padding-right:400px;margin-bottom:26px"><div><h1>Moje lecznice</h1><div class="ctx-sum" style="margin-top:6px"><span><b>42</b> lecznice w regionie</span><span><b>1</b> nowa</span><span>Obrót 12 mies.: <b>1 284 600 zł</b></span></div></div></div>
+  <div class="bar"><div class="input"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Szukaj po nazwie, NIP lub kodzie kontrahenta</div>
+    <div class="input select"><span>Status konta: <b>Wszystkie</b></span><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></div></div>
+  <section class="panel">
+    <table class="tbl"><thead><tr><th>Lecznica</th><th>Kod kontrahenta</th><th class="r">Prowizja</th><th class="r">Wartość koszyka</th><th>Ostatnie logowanie</th><th>Ostatnie zamówienie</th><th class="r">Obrót 12 mies.</th></tr></thead>
+    <tbody><tr class="newrow"><td><b>Gabinet Weterynaryjny Animal</b> <span class="tag new" style="margin-left:6px">NOWA</span><span class="sub">Gniezno · 1 przypisany klient · zweryfikowana przez BOK</span></td>
+          <td class="mono"><span class="mute">nadaj kod</span></td><td class="r">8%</td>
+          <td class="r"><span class="mute">—</span></td><td><span class="mute">konto nieaktywne</span></td><td>—</td>
+          <td class="r strong"><span class="mute">—</span></td></tr><tr class=""><td><b>Przychodnia Weterynaryjna Pod Lipami</b><span class="sub">Poznań</span></td>
+          <td class="mono">K-WLKP-00412</td><td class="r">10%</td>
+          <td class="r">1 842,60 zł</td><td>dziś, 08:12</td><td>12.11.2026</td>
+          <td class="r strong">68 420 zł</td></tr><tr class=""><td><b>Lecznica Zwierząt Arka</b><span class="sub">Konin</span></td>
+          <td class="mono">K-WLKP-00388</td><td class="r">10%</td>
+          <td class="r"><span class="mute">—</span></td><td>wczoraj, 16:40</td><td>19.11.2026</td>
+          <td class="r strong">54 210 zł</td></tr><tr class=""><td><b>Centrum Weterynaryjne Oaza</b><span class="sub">Piła</span></td>
+          <td class="mono">K-WLKP-00297</td><td class="r">12%</td>
+          <td class="r">3 120,00 zł</td><td>18.11.2026</td><td>06.11.2026</td>
+          <td class="r strong">91 880 zł</td></tr><tr class=""><td><b>Klinika Weterynaryjna Sfora</b><span class="sub">Leszno</span></td>
+          <td class="mono">K-WLKP-00351</td><td class="r">8%</td>
+          <td class="r"><span class="mute">—</span></td><td>15.11.2026</td><td>28.10.2026</td>
+          <td class="r strong">31 470 zł</td></tr><tr class=""><td><b>Przychodnia Na Wildzie</b><span class="sub">Poznań</span></td>
+          <td class="mono">K-WLKP-00402</td><td class="r">10%</td>
+          <td class="r">486,30 zł</td><td>17.11.2026</td><td>17.11.2026</td>
+          <td class="r strong">42 960 zł</td></tr><tr class=""><td><b>Gabinet Weterynaryjny Psi Uśmiech</b><span class="sub">Września</span></td>
+          <td class="mono">K-WLKP-00419</td><td class="r">8%</td>
+          <td class="r"><span class="mute">—</span></td><td>02.11.2026</td><td>09.10.2026</td>
+          <td class="r strong">12 340 zł</td></tr><tr class=""><td><b>Lecznica dla Zwierząt Jeżyce</b><span class="sub">Poznań</span></td>
+          <td class="mono">K-WLKP-00377</td><td class="r">10%</td>
+          <td class="r">268,90 zł</td><td>19.11.2026</td><td>14.11.2026</td>
+          <td class="r strong">38 150 zł</td></tr><tr class=""><td><b>Przychodnia Weterynaryjna Kłos</b><span class="sub">Kalisz</span></td>
+          <td class="mono">K-WLKP-00266</td><td class="r">8%</td>
+          <td class="r"><span class="mute">—</span></td><td>21.10.2026</td><td>30.09.2026</td>
+          <td class="r strong">9 870 zł</td></tr></tbody></table>
+    <div class="panel-h" style="border-top:1px solid var(--line-2);border-bottom:0;font-size:13px;color:var(--mute)">Pokazano 9 z 42 lecznic<div class="r"><a class="btn sm" href="#"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg></a><a class="btn sm" href="#"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></div></div>
+  </section>
+</main>
+<div class="os-note" role="alert">
+      <div class="os-a"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4285f4"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>Google Chrome · vetspot.com<span style="margin-left:auto">teraz</span></div>
+      <div class="os-b"><img src="assets/vetspot-logo.svg" alt="" style="width:44px;height:44px;object-fit:contain;background:#fff;border-radius:8px;padding:4px"><div><b>Nowa placówka w Twoim regionie</b><p>Gabinet Weterynaryjny Animal, Gniezno · 1 przypisany klient · zweryfikowana przez BOK</p></div></div>
+      <div class="os-btns"><span>Zamknij</span><span class="p">Zobacz</span></div></div>
+</div>
+</body>
+</html>
