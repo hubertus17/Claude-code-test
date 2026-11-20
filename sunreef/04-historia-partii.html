@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historia partii materiału</title>
+<link rel="stylesheet" href="assets/sunreef.css">
+<style>
+.crumbs svg{width:14px;height:14px}
+.hdr{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.hdr .gi{width:52px;height:52px;border-radius:var(--r);background:var(--sea-wash);color:var(--sea-ink);display:grid;place-items:center;flex:none}
+.hdr .gi svg{width:28px;height:28px}
+.meta{display:flex;gap:8px;margin-top:8px}
+.sum{display:flex;align-items:center;gap:22px;background:var(--stock);border:1px solid var(--line);padding:14px 18px;margin-bottom:20px}
+.chips{display:flex;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:17px;font-weight:600;font-size:14.5px}
+.chip b{font-family:var(--num);font-size:19px}
+.chip.u{background:var(--sea-wash);color:var(--sea-ink)}
+.chip.w{background:var(--alert-wash);color:var(--alert-ink)}
+.chip.o{background:var(--warn-wash);color:var(--warn)}
+.sheets{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mute)}
+.sheets .row{display:grid;grid-template-columns:repeat(12,22px);gap:3px}
+.sheets i{height:30px;border-radius:2px;display:block}
+.sheets i.u{background:var(--sea)}.sheets i.w{background:var(--alert)}
+.sheets i.o{background:repeating-linear-gradient(135deg,var(--warn) 0 3px,#f1d199 3px 6px)}
+.grid4{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
+.tl{padding:8px 22px 10px}
+.ev{display:grid;grid-template-columns:118px 36px 1fr;gap:0 14px;position:relative}
+.ev .when{padding-top:16px;text-align:right}
+.ev .when b{display:block;font-weight:700;font-size:14.5px}
+.ev .when span{font-size:13.5px;color:var(--mute)}
+.ev .ax{position:relative;display:flex;justify-content:center}
+.ev .ax:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:var(--seam)}
+.ev:first-child .ax:before{top:18px}.ev:last-child .ax:before{bottom:calc(100% - 18px)}
+.ev .nd{position:relative;margin-top:12px;width:34px;height:34px;border-radius:50%;background:var(--stock);border:2px solid var(--ink-2);display:grid;place-items:center;color:var(--ink-2)}
+.ev .nd svg{width:17px;height:17px}
+.ev .bd{padding:14px 0 18px;border-bottom:1px solid var(--line-2)}
+.ev:last-child .bd{border-bottom:0}
+.ev h3{font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px}
+.kv{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px;font-size:14px;color:var(--ink-2)}
+.kv span{display:inline-flex;align-items:center;gap:6px}
+.kv em{font-style:normal;color:var(--mute)}
+.ev.x .nd{border-color:var(--warn);color:var(--warn);background:var(--warn-wash)}
+.ev.x .bd{}
+.why{margin-top:10px;background:var(--warn-wash);border:1px solid var(--warn-line);padding:9px 12px;font-size:14px;color:var(--ink)}
+.why em{font-style:normal;color:var(--warn);font-weight:600}
+.ev.end .nd{border-color:var(--ok);color:#fff;background:var(--ok)}
+.src{font-size:12px;font-weight:600;color:var(--mute);border:1px solid var(--line);border-radius:4px;padding:1px 6px}
+.side{display:flex;flex-direction:column;gap:20px}
+.locbox{padding:18px}
+.locbox .lb{font-size:13px;font-weight:600;color:var(--mute);display:flex;gap:6px;align-items:center}
+.locbox .lb svg{width:15px;height:15px}
+.locbox .v{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:20px;font-weight:700}
+.locbox .v svg{width:26px;height:26px;color:var(--ok)}
+.locbox p{font-size:13.5px;color:var(--mute);margin-top:8px}
+.bal{padding:6px 18px 14px}
+.bal div{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:14.5px}
+.bal div:last-child{border-bottom:0;font-weight:700}
+.bal b{font-family:var(--num);font-size:19px}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand"><span class="wm">SUNREEF</span><span class="sub">Materiał i formy · produkcja</span></div>
+    <nav class="nav"><a href="01-pulpit.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Pulpit</span></a><a href="04-historia-partii.html" class="on" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 9.5 4.8L12 12 2.5 7.3z"/><path d="m2.5 12 9.5 4.8 9.5-4.8"/><path d="m2.5 16.7 9.5 4.8 9.5-4.8"/></svg><span>Materiał</span></a><a href="06-paszport-formy.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9h19l-2.2 9.5H4.7z"/><path d="M7 9V5.5h10V9"/><path d="M8 13.5h8"/></svg><span>Formy</span></a><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg><span>Inwentaryzacje</span></a><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"/><path d="M14 9h4l4 4v3h-8z"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg><span>Dostawy na stanowiska</span></a><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><span>Zgłoszenia strat</span></a><a href="03-raport-tygodniowy.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7.5 16v-4"/><path d="M12.5 16V8"/><path d="M17.5 16V5"/></svg><span>Raporty</span></a><a href="01-pulpit.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>Alerty</span><span class="ct">4</span></a><div class="sep"></div><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg><span>Administracja</span></a></nav>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <div class="crumbs"><a href="#">Materiał</a><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span class="cur">Partia M-24817</span></div>
+      <div class="user"><span class="av">AZ</span><span><b>Anna Zielińska</b> · Kierownik produkcji</span></div>
+    </header>
+    <main class="page">
+<div class="hdr"><span class="gi"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 9.5 4.8L12 12 2.5 7.3z"/><path d="m2.5 12 9.5 4.8 9.5-4.8"/><path d="m2.5 16.7 9.5 4.8 9.5-4.8"/></svg></span><div>
+<h1>Sklejka okoume 15 mm · partia M-24817</h1>
+<div class="meta"><span class="tag"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v.01M14 21h.01M17.5 21H21M21 17.5V21"/></svg><span class="mono">QR M-24817</span></span><span class="tag"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35z"/><path d="M6 18h12M6 14h12"/></svg>Wydano: 12 ark.</span><span class="tag"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"/><path d="M14 9h4l4 4v3h-8z"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg>Dostawca A (przykład)</span></div>
+</div></div>
+<div class="sum">
+  <div class="chips"><span class="chip u">Zużyto <b>7</b> ark.</span><span class="chip w">Odpad <b>1</b> ark.</span><span class="chip o">Użyto na innej jednostce <b>4</b> ark.</span></div>
+  <div class="sheets"><span>12 arkuszy</span><div class="row"><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="u"></i><i class="w"></i><i class="o"></i><i class="o"></i><i class="o"></i><i class="o"></i></div></div>
+</div>
+<div class="grid4">
+  <section class="panel"><div class="panel-h"><h2>Droga partii</h2><span class="r mute" style="font-size:13px">5 zdarzeń · od wydania do użycia</span></div><div class="tl"><div class="ev "><div class="when"><b>03.11.2026</b><span>07:40</span></div><div class="ax"><span class="nd"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35z"/><path d="M6 18h12M6 14h12"/></svg></span></div><div class="bd"><h3>Wydanie z magazynu</h3><div class="kv"><span>Magazyn główny</span><span><span class="mono">RW 1184/11/2026</span> <span class="src">z Comarch XL</span></span><span><em>dla:</em> <span class="hull"><span class="sn" aria-hidden="true">08</span><span>Sunreef 80 Electric · jednostka 08</span></span></span></div></div></div><div class="ev "><div class="when"><b>03.11.2026</b><span>09:15</span></div><div class="ax"><span class="nd"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span></div><div class="bd"><h3>Przyjęcie w strefie</h3><div class="kv"><span><em>skan QR strefy:</em> Hala 2 – strefa B</span><span>Marek Wójcik</span></div></div></div><div class="ev "><div class="when"><b>04.11.2026</b><span>06:50</span></div><div class="ax"><span class="nd"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="m10 8.5 5.5 3.5-5.5 3.5z"/></svg></span></div><div class="bd"><h3>Rozpoczęcie etapu</h3><div class="kv"><span>Stolarnia</span><span><em>skan QR jednostki:</em> <span class="hull"><span class="sn" aria-hidden="true">08</span><span>Sunreef 80 Electric · jednostka 08</span></span></span><span>Marek Wójcik</span></div></div></div><div class="ev x"><div class="when"><b>06.11.2026</b><span>13:20</span></div><div class="ax"><span class="nd"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></span></div><div class="bd"><h3>Użycie na innej jednostce <span class="badge warn">4 ark.</span></h3><div class="kv"><span><span class="hull"><span class="sn" aria-hidden="true">03</span><span>60 Sunreef Power Electric · jednostka 03</span></span></span><span>Stolarnia</span><span>Tomasz Kowal</span></div><div class="why"><em>uzasadnienie:</em> „Pilna potrzeba, uzupełnienie z kolejnej dostawy”</div></div></div><div class="ev end"><div class="when"><b>10.11.2026</b><span>14:05</span></div><div class="ax"><span class="nd"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></div><div class="bd"><h3>Zakończenie etapu</h3><div class="kv"><span><em>zużyto</em> <b>7 ark.</b></span><span><em>odpad</em> <b>1 ark.</b></span><span>Marek Wójcik</span></div></div></div></div></section>
+  <aside class="side">
+    <section class="panel locbox"><div class="lb"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>Lokalizacja według ostatniego skanu</div>
+      <div class="v"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Wykorzystana w całości</div>
+      <p>Ostatni skan: 10.11.2026, 14:05 · Marek Wójcik</p></section>
+    <section class="panel"><div class="panel-h"><h2>Bilans partii</h2></div><div class="bal">
+      <div><span>Wydano z magazynu</span><b>12 ark.</b></div>
+      <div><span>Zużyto · <span class="sn" aria-hidden="true">08</span></span><b>7 ark.</b></div>
+      <div><span>Odpad</span><b>1 ark.</b></div>
+      <div><span>Użyto na innej jednostce · <span class="sn" aria-hidden="true">03</span></span><b>4 ark.</b></div>
+      <div><span>Pozostało</span><b>0 ark.</b></div>
+    </div></section>
+  </aside>
+</div></main>
+  </div>
+</div>
+</body>
+</html>
