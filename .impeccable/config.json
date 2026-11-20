@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "varela round",
+        "createdAt": "2026-11-20T09:12:24.194Z",
+        "reason": "Direction B (task 2) uses the ui-ux-pro-max design system per user request; DESIGN.md documents direction A"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "nunito sans",
+        "createdAt": "2026-11-20T09:12:24.200Z",
+        "reason": "Direction B (task 2) uses the ui-ux-pro-max design system per user request; DESIGN.md documents direction A"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "outfit",
+        "createdAt": "2026-11-20T10:14:03.319Z",
+        "reason": "Direction C (task 3) uses ui-ux-pro-max typography pairing per user request; DESIGN.md documents direction A"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "rubik",
+        "createdAt": "2026-11-20T10:14:03.328Z",
+        "reason": "Direction C (task 3) uses ui-ux-pro-max typography pairing per user request; DESIGN.md documents direction A"
+      }
+    ]
+  }
+}

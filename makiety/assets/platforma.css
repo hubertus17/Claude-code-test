@@ -1,0 +1,161 @@
+/* [Marka] – wspólny system makiet (kierunek: list przewozowy) */
+@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/archivo-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/archivo-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url("fonts/jetbrains-mono-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url("fonts/jetbrains-mono-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --navy:#123a63; --navy-2:#0d2c4d; --navy-3:#1c4a7a; --sky:#9fc0e3; --sky-ink:#cfe0f1;
+  --ink:#14181d; --ink-2:#3a4450; --mute:#5b6673; --line:#cbd4de; --line-2:#e3e8ee;
+  --ground:#e6ecf2; --stock:#ffffff; --wash:#f4f7fa;
+  --sig:#c2410c; --sig-ink:#9a3412; --sig-wash:#fdeee6;
+  --ok:#1e7a4c; --ok-wash:#e4f3ea; --warn:#9a6200; --warn-wash:#fbf1dc; --bad:#b42318; --bad-wash:#fbe9e7;
+  --s-pet:#0f6e74; --s-vet:#5b3f9e; --s-own:#a8640f;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ground)}
+body{width:1440px;min-height:900px;background:var(--ground);font:15px/1.45 "Archivo",system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+::selection{background:var(--navy);color:#fff}
+a{color:var(--navy);text-underline-offset:3px;text-decoration-thickness:1px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--sig);outline-offset:2px}
+.num,td,.money{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.02em;font-weight:500}
+.mute{color:var(--mute)}
+.ic{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.ic.s{width:16px;height:16px}
+h1{font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.02em;color:var(--navy)}
+h2{font-size:18px;line-height:1.25;font-weight:700;letter-spacing:-.01em}
+h3{font-size:15px;font-weight:700}
+
+/* ---------- przyciski ---------- */
+.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:var(--r);border:1px solid var(--line);background:var(--stock);font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink)}
+.btn:hover{border-color:var(--navy);color:var(--navy)}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn.primary:hover{background:var(--navy-2);border-color:var(--navy-2);color:#fff}
+.btn.navy{background:var(--stock);border-color:var(--navy);color:var(--navy)}
+.btn.sm{height:32px;padding:0 12px;font-size:13px}
+.btn.lg{height:52px;font-size:16px;padding:0 24px}
+.btn.block{width:100%}
+.link{color:var(--navy);font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px;display:inline-flex;gap:6px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);background:var(--stock);padding:3px;gap:2px}
+.seg span{padding:5px 12px;border-radius:4px;font-size:13px;font-weight:600;color:var(--mute)}
+.seg span.on{background:var(--navy);color:#fff}
+.input{display:flex;align-items:center;gap:10px;height:42px;border:1px solid var(--line);border-radius:var(--r);background:var(--stock);padding:0 12px;color:var(--mute);font-size:14px}
+.input b{color:var(--ink);font-weight:500}
+.select{justify-content:space-between;min-width:200px}
+
+/* ---------- znaczniki sprzedawców i statusy ---------- */
+.sw{display:inline-block;width:10px;height:10px;flex:none}
+.sw.pet{background:var(--s-pet)}.sw.vet{background:var(--s-vet)}.sw.own{background:var(--s-own)}
+.seller{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:12px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.ok{background:var(--ok-wash);color:var(--ok)}
+.pill.warn{background:var(--warn-wash);color:var(--warn)}
+.pill.bad{background:var(--bad-wash);color:var(--bad)}
+.pill.sig{background:var(--sig-wash);color:var(--sig-ink)}
+.pill.info{background:#e6eef8;color:var(--navy)}
+.tag{display:inline-flex;align-items:center;height:24px;padding:0 8px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.tag.new{background:var(--sig)}
+.tag.light{background:var(--stock);color:var(--ink);border:1px solid var(--ink)}
+
+/* części zamówienia – mini etykiety w tabelach */
+.parts{display:flex;gap:4px;flex-wrap:wrap}
+.part{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 8px 0 6px;border:1px solid var(--line);background:var(--stock);font-size:12.5px;font-weight:600;white-space:nowrap}
+.part i{width:8px;height:8px;display:block}
+.part .st{width:14px;height:14px;margin-left:2px}
+.part.pending{border-color:var(--sig);background:var(--sig-wash)}
+
+/* ---------- ETYKIETA (sygnatura) ---------- */
+.slip{background:var(--stock);border:1px solid var(--line);position:relative}
+.slip-h{display:flex;align-items:center;gap:16px;min-height:56px;padding:10px 20px;position:relative}
+.slip-h:after{content:"";position:absolute;left:14px;right:14px;bottom:-1px;border-bottom:1.5px dashed var(--line)}
+.slip-h .notch{position:absolute;bottom:-8px;width:16px;height:16px;border-radius:50%;background:var(--ground);border:1px solid var(--line);z-index:1}
+.slip-h .notch.l{left:-9px;clip-path:inset(0 0 0 50%)}
+.slip-h .notch.r{right:-9px;clip-path:inset(0 50% 0 0)}
+.sender{display:flex;flex-direction:column;line-height:1.25}
+.sender small{font-size:12.5px;color:var(--mute);margin-top:2px}
+.sender b{font-size:16px;display:flex;align-items:center;gap:8px}
+.slip-h .end{margin-left:auto;display:flex;align-items:center;gap:14px}
+.bars{display:block;height:26px;width:112px;color:var(--ink)}
+.slip-f{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;background:var(--wash);border-top:1px solid var(--line-2);font-size:14px}
+.slip-f .mono{color:var(--ink-2)}
+
+/* ---------- powłoka sklepu ---------- */
+.shop-h{background:var(--navy);color:#fff;height:68px;display:flex;align-items:center;gap:28px;padding:0 48px}
+.shop-h .logo{height:28px;display:block}
+.shop-h .search{flex:1;max-width:480px;height:42px;border-radius:var(--r);background:#ffffff14;border:1px solid #ffffff38;display:flex;align-items:center;gap:10px;padding:0 14px;color:#d5e3f1;font-size:14px}
+.shop-h .clinic{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--sky-ink);line-height:1.25}
+.shop-h .clinic b{color:#fff;font-weight:600;display:block;font-size:14px}
+.shop-h .clinic .ic{color:var(--sky)}
+.shop-h .acts{margin-left:auto;display:flex;align-items:center;gap:24px;font-size:14px;font-weight:500}
+.shop-h .acts span{display:flex;align-items:center;gap:8px}
+.shop-h .cnt{font-style:normal;min-width:20px;height:20px;border-radius:10px;background:var(--sky);color:var(--navy);font-size:12px;font-weight:700;display:inline-grid;place-items:center;padding:0 5px}
+.shop-n{background:var(--stock);border-bottom:1px solid var(--line);height:48px;display:flex;align-items:center;gap:30px;padding:0 48px;font-weight:600;font-size:14px}
+.steps{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mute);font-weight:500}
+.steps .st{display:flex;align-items:center;gap:8px}
+.steps .st i{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700}
+.steps .st.on{color:var(--navy);font-weight:700}.steps .st.on i{background:var(--navy);border-color:var(--navy);color:#fff}
+.steps .st.done i{background:var(--ok);border-color:var(--ok);color:#fff}
+.steps .sep{width:28px;height:1px;background:var(--line)}
+
+/* ---------- powłoka aplikacji (panele) ---------- */
+.app{display:grid;grid-template-columns:248px 1fr;min-height:100vh}
+.side{background:var(--navy);color:#dbe7f3;display:flex;flex-direction:column;padding:22px 14px 18px}
+.side .logo{height:26px;margin:2px 10px 6px}
+.side .ctx{margin:0 10px 22px;font-size:12.5px;color:var(--sky)}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side nav a{display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--r);color:#dbe7f3;text-decoration:none;font-size:14px;font-weight:500}
+.side nav a .ic{color:var(--sky)}
+.side nav a:hover{background:#ffffff12}
+.side nav a.on{background:#fff;color:var(--navy);font-weight:700}
+.side nav a.on .ic{color:var(--navy)}
+.side nav a .badge{margin-left:auto;background:var(--sig);color:#fff;font-size:11.5px;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 6px}
+.side .me{margin-top:auto;display:flex;align-items:center;gap:10px;padding:14px 10px 0;border-top:1px solid #ffffff22;font-size:13px;line-height:1.3}
+.side .me b{color:#fff;display:block;font-size:14px}
+.av{width:36px;height:36px;border-radius:50%;background:var(--sky);color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:13px;flex:none}
+.main{padding:28px 36px 40px;min-width:0}
+.top{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.top .r{margin-left:auto;display:flex;gap:12px;align-items:center}
+
+/* ---------- panele / sekcje ---------- */
+.panel{background:var(--stock);border:1px solid var(--line)}
+.panel-h{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line-2)}
+.panel-h .r{margin-left:auto;display:flex;gap:10px;align-items:center}
+.panel-b{padding:16px 20px}
+
+/* tabele */
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;font-size:12px;font-weight:600;color:var(--mute);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;background:var(--wash)}
+.tbl td{padding:12px;border-bottom:1px solid var(--line-2);vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th:first-child,.tbl td:first-child{padding-left:20px}
+.tbl th:last-child,.tbl td:last-child{padding-right:20px}
+.tbl .r{text-align:right}
+.tbl td.strong{font-weight:700}
+.tbl td.mono{white-space:nowrap}
+.tbl .sub{display:block;color:var(--mute);font-size:12.5px;margin-top:1px}
+
+/* liczby */
+.fig{display:flex;flex-direction:column;gap:2px}
+.fig small{font-size:13px;color:var(--mute);font-weight:500}
+.fig b{font-size:26px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.delta{font-size:12.5px;font-weight:600;color:var(--ok)}
+.delta.dn{color:var(--bad)}
+
+/* produkty */
+.thumb{width:72px;height:72px;background:var(--wash);border:1px solid var(--line-2);display:grid;place-items:center;flex:none}
+.thumb svg{width:56px;height:56px}
+.qty{display:inline-flex;align-items:center;justify-content:space-between;width:112px;height:36px;border:1px solid var(--line);border-radius:var(--r);background:var(--stock);padding:0 4px;font-weight:600}
+.qty span.b{width:28px;height:28px;display:grid;place-items:center;color:var(--mute)}
+.price-old{color:var(--mute);text-decoration:line-through;font-weight:500;margin-right:6px}
+
+/* meter */
+.meter{height:8px;background:var(--line-2);display:flex;overflow:hidden}
+.meter i{display:block;height:100%}
+
+/* powiadomienie przeglądarki */
+.os-note{position:absolute;width:380px;background:#f2f2f2;border-radius:12px;box-shadow:0 18px 40px rgba(10,20,35,.28),0 2px 6px rgba(10,20,35,.16);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#1d1d1f;padding:14px 16px;z-index:5}

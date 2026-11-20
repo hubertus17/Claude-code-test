@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Rejestracja – wybór lecznicy · [Marka]</title>
+<link rel="stylesheet" href="assets/platforma-c.css">
+<style>
+    .split{display:grid;grid-template-columns:760px 1fr;min-height:calc(100vh - 72px)}
+    .map{position:relative;overflow:hidden;border-right:1px solid var(--line)}
+    .fl-s{position:absolute;top:24px;left:24px;right:24px;display:flex;gap:10px}
+    .fl-s .search{flex:1;width:auto;background:#fff;height:50px;box-shadow:0 8px 24px -12px rgba(0,0,0,.35);color:var(--ink);font-weight:500}
+    .fl-s .btn{height:50px;box-shadow:0 8px 24px -12px rgba(0,0,0,.35)}
+    .fl-l{position:absolute;left:24px;right:24px;bottom:24px;background:#fff;border-radius:var(--r);box-shadow:0 18px 40px -18px rgba(0,0,0,.45);padding:8px}
+    .cl{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;font-size:14px}
+    .cl b{display:block;font-weight:600}.cl span{font-size:13px;color:var(--mute)}
+    .cl .st{margin-left:auto}.cl .st .ic{width:14px}
+    .cl .no{width:28px;height:28px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:700;font-size:12px;color:var(--ink);flex:none}
+    .cl.sel{background:var(--sunk);outline:2px solid var(--ink)}.cl.sel .no{background:var(--ink);color:#fff}
+    .form{padding:40px 56px;display:flex;flex-direction:column}
+    .vsteps{display:flex;flex-direction:column;gap:0;margin:22px 0 26px;border-left:2px solid var(--line);padding-left:20px}
+    .vs{position:relative;padding:6px 0;font-size:14px;color:var(--mute)}
+    .vs:before{content:"";position:absolute;left:-28px;top:10px;width:14px;height:14px;border-radius:50%;background:var(--ok)}
+    .vs.on{color:var(--ink);font-weight:600}.vs.on:before{background:#fff;border:4px solid var(--ink)}
+    .pick{border-radius:var(--r);background:var(--ink);color:#fff;padding:20px 22px;margin-top:18px}
+    .pick .k{color:#b9bec7}
+    .pick b{font:600 24px Outfit;display:block;margin-top:4px}
+    .q{display:flex;gap:12px;align-items:center;margin-top:16px;padding:14px 16px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+    .q .ic{width:26px;height:26px}
+    .lbl{font-size:13.5px;font-weight:600;margin:20px 0 8px}
+    .inp{height:48px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--mute);font-size:14px}
+    .acts{display:flex;justify-content:space-between;margin-top:26px}
+    .bens{display:flex;gap:10px;margin-top:auto;padding-top:28px;flex-wrap:wrap}
+    .ben{flex:1;min-width:150px;border-radius:16px;background:var(--surface);border:1px solid var(--line);padding:14px}
+    .ben b{display:block;font:600 22px Outfit}
+    .ben span{font-size:13px;color:var(--ink-2)}
+    </style>
+</head>
+<body>
+<header class="bar"><img class="logo" src="assets/logo.svg" alt="[Marka]">
+  <div class="search"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Szukaj karmy, schorzenia lub marki</div><div class="end"><span class="mute">Masz konto?</span><a class="btn sm" href="#">Zaloguj się</a></div></header>
+<div class="split">
+  <section class="map"><svg viewBox="0 0 760 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="display:block;font-family:Rubik">
+      <rect width="760" height="900" fill="#e3e6df"/><path d="M330 130 h90 v60 h-90z" fill="#cfe1c6"/><path d="M30 320 h110 v60 h-110z" fill="#cfe1c6"/><path d="M520 520 h200 v110 h-200z" fill="#cfe1c6"/>
+      <path d="M700 0 C730 160 690 330 760 470 V0z" fill="#cbdbe8"/><path d="M0 120 L760 90" stroke="#ffffff" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M0 300 C200 280 420 340 760 310" stroke="#ffffff" stroke-width="18" fill="none" stroke-linecap="round"/><path d="M120 0 L180 900" stroke="#ffffff" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M420 0 L470 900" stroke="#ffffff" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M0 500 L760 470" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M640 0 C600 220 680 420 650 900" stroke="#ffffff" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M290 0 L320 900" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M0 200 L760 196" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M0 400 L760 386" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <text x="336" y="214" font-size="13" fill="#4a6040">Rynek Jeżycki</text>
+      <circle cx="470" cy="420" r="26" fill="#3d63dd" opacity=".15"/><circle cx="470" cy="420" r="8" fill="#3d63dd" stroke="#fff" stroke-width="3"/><g transform="translate(430,330)"><circle r="20" fill="#15171c" stroke="#15171c" stroke-width="2"/><text y="5" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">1</text></g><g transform="translate(250,230)"><circle r="15" fill="#ffffff" stroke="#15171c" stroke-width="2"/><text y="5" text-anchor="middle" font-size="12" font-weight="700" fill="#15171c">2</text></g><g transform="translate(560,160)"><circle r="15" fill="#ffffff" stroke="#15171c" stroke-width="2"/><text y="5" text-anchor="middle" font-size="12" font-weight="700" fill="#15171c">3</text></g><g transform="translate(150,420)"><circle r="15" fill="#ffffff" stroke="#15171c" stroke-width="2"/><text y="5" text-anchor="middle" font-size="12" font-weight="700" fill="#15171c">4</text></g></svg>
+    <div class="fl-s"><div class="search"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Poznań, Jeżyce</div><a class="btn" href="#"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/></svg>Użyj mojej lokalizacji</a></div>
+    <div class="fl-l"><div class="cl sel"><span class="no">1</span><div><b>Przychodnia Weterynaryjna Pod Lipami</b><span>ul. Lipowa 12, Poznań · 1,2 km</span></div><span class="st ok"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Wybrana</span></div><div class="cl "><span class="no">2</span><div><b>Lecznica dla Zwierząt Jeżyce</b><span>ul. Dąbrowskiego 41, Poznań · 1,6 km</span></div></div><div class="cl "><span class="no">3</span><div><b>Gabinet Weterynaryjny Kocia Łapa</b><span>ul. Kraszewskiego 8, Poznań · 2,1 km</span></div></div><div class="cl "><span class="no">4</span><div><b>Klinika Weterynaryjna Ogrody</b><span>ul. Szamarzewskiego 70, Poznań · 2,8 km</span></div></div></div></section>
+  <section class="form">
+    <div class="k">Załóż konto w [Marka] · krok 3 z 3</div>
+    <div class="vsteps"><div class="vs">Twoje dane</div><div class="vs">Twój pupil · Rudy · pies</div><div class="vs on">Twoja lecznica</div></div>
+    <h1>Wybierz swoją lecznicę</h1>
+    <div style="display:flex;gap:10px;align-items:center;margin-top:12px"><span class="st info"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.5v.01"/></svg>Wybór jest obowiązkowy</span></div>
+    <p class="mute" style="margin-top:10px;font-size:15px">Twoja lecznica poleca produkty dopasowane do Twojego pupila.</p>
+    <div class="pick"><div class="k">Wybrana lecznica · nr 1 na mapie</div><b>Przychodnia Weterynaryjna Pod Lipami</b><span style="font-size:14px;color:#dfe2e7">ul. Lipowa 12, Poznań · 1,2 km</span></div>
+    <div class="q"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3z"/><path d="M20 14v.01"/><path d="M14 20h.01"/><path d="M17 20h4v-3"/></svg><span><b>Wszedłeś z kodu QR w gabinecie?</b> Lecznica wybierze się sama.</span></div>
+    <div class="lbl">Nie ma Twojej lecznicy na liście? Wpisz nazwę, adres lub NIP – sprawdzimy placówkę</div>
+    <div class="inp"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2"/><path d="M13 7h2"/><path d="M9 11h2"/><path d="M13 11h2"/><path d="M10 21v-4h4v4"/></svg>np. Gabinet Weterynaryjny Animal, Gniezno</div>
+    <div class="acts"><a class="btn" href="#"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>Wstecz</a><a class="btn p lg" href="#">Załóż konto</a></div>
+    <div class="bens"><div class="ben"><b>−10%</b><span>na pierwsze zakupy</span></div><div class="ben"><b>10%</b><span>[MARKA] CLUB: wraca na kolejne zakupy</span></div><div class="ben"><b><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 6.1A9.7 9.7 0 0 1 12 6c5.5 0 9 6 9 6a16 16 0 0 1-2.6 3.3"/><path d="M6.6 6.6C4.2 8.1 3 12 3 12s3.5 6 9 6a9 9 0 0 0 4.4-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></b><span>Lecznica nie widzi Twoich danych ani koszyka</span></div></div>
+  </section>
+</div>
+</body>
+</html>

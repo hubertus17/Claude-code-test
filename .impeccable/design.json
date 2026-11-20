@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T08:40:35.966783+00:00",
+  "title": "Design System: [Marka]",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "[Marka] Navy",
+        "canonical": "#123a63",
+        "oklch": "oklch(34.4% 0.084 252.1)",
+        "tonalRamp": [
+          "#030c18",
+          "#12253a",
+          "#27415f",
+          "#3d6087",
+          "#5e83ae",
+          "#89a8cb",
+          "#b5cde9",
+          "#e0f0ff"
+        ]
+      },
+      "sky": {
+        "role": "primary",
+        "displayName": "Sky",
+        "canonical": "#9fc0e3",
+        "oklch": "oklch(79.6% 0.061 250.1)",
+        "tonalRamp": [
+          "#040c15",
+          "#172534",
+          "#2e4257",
+          "#46607c",
+          "#6783a1",
+          "#90a7c1",
+          "#bbcde0",
+          "#e3f0fe"
+        ]
+      },
+      "sky-ink": {
+        "role": "primary",
+        "displayName": "Sky Ink",
+        "canonical": "#cfe0f1",
+        "oklch": "oklch(89.9% 0.030 248.2)",
+        "tonalRamp": [
+          "#080c10",
+          "#1e252c",
+          "#37414b",
+          "#525f6c",
+          "#748290",
+          "#9aa6b2",
+          "#c3ccd5",
+          "#e9eff6"
+        ]
+      },
+      "signal": {
+        "role": "secondary",
+        "displayName": "Signal Orange",
+        "canonical": "#c2410c",
+        "oklch": "oklch(55.3% 0.174 38.4)",
+        "tonalRamp": [
+          "#200000",
+          "#470a00",
+          "#731d00",
+          "#a23201",
+          "#cd562e",
+          "#e88667",
+          "#ffb59d",
+          "#ffe0cf"
+        ]
+      },
+      "signal-ink": {
+        "role": "secondary",
+        "displayName": "Signal Ink",
+        "canonical": "#9a3412",
+        "oklch": "oklch(47.0% 0.143 37.3)",
+        "tonalRamp": [
+          "#1d0200",
+          "#421203",
+          "#6b2712",
+          "#973e22",
+          "#c16043",
+          "#de8d75",
+          "#f9b9a6",
+          "#ffe3d5"
+        ]
+      },
+      "signal-wash": {
+        "role": "secondary",
+        "displayName": "Signal Wash",
+        "canonical": "#fdeee6",
+        "oklch": "oklch(95.9% 0.020 50.2)",
+        "tonalRamp": [
+          "#0e0a08",
+          "#29231f",
+          "#463e39",
+          "#665b55",
+          "#8a7d77",
+          "#aca29d",
+          "#d1c9c4",
+          "#f3edea"
+        ]
+      },
+      "seller-pet": {
+        "role": "tertiary",
+        "displayName": "Spółka A Teal",
+        "canonical": "#0f6e74",
+        "oklch": "oklch(49.1% 0.080 201.8)",
+        "tonalRamp": [
+          "#000f11",
+          "#002a2d",
+          "#0d494d",
+          "#1e696f",
+          "#438d93",
+          "#78b0b4",
+          "#aad4d7",
+          "#d8f5f7"
+        ]
+      },
+      "seller-vet": {
+        "role": "tertiary",
+        "displayName": "Spółka B Violet",
+        "canonical": "#5b3f9e",
+        "oklch": "oklch(45.0% 0.148 293.1)",
+        "tonalRamp": [
+          "#0d0520",
+          "#271a47",
+          "#433272",
+          "#624ba0",
+          "#846ec9",
+          "#a797e3",
+          "#ccc1fc",
+          "#efe8ff"
+        ]
+      },
+      "seller-own": {
+        "role": "tertiary",
+        "displayName": "Own-Brand Ochre",
+        "canonical": "#a8640f",
+        "oklch": "oklch(56.7% 0.124 63.8)",
+        "tonalRamp": [
+          "#180600",
+          "#3a1b00",
+          "#5f3300",
+          "#884d00",
+          "#af702c",
+          "#cd9867",
+          "#ebc29d",
+          "#ffe9ce"
+        ]
+      },
+      "ok": {
+        "role": "status",
+        "displayName": "OK Green",
+        "canonical": "#1e7a4c",
+        "oklch": "oklch(51.5% 0.112 156.4)",
+        "tonalRamp": [
+          "#001004",
+          "#012c17",
+          "#0f4c2d",
+          "#206e46",
+          "#459266",
+          "#79b48f",
+          "#abd7ba",
+          "#d8f8e3"
+        ]
+      },
+      "ok-wash": {
+        "role": "status",
+        "displayName": "OK Wash",
+        "canonical": "#e4f3ea",
+        "oklch": "oklch(95.0% 0.020 159.7)",
+        "tonalRamp": [
+          "#090c0a",
+          "#202622",
+          "#3a423d",
+          "#55615a",
+          "#77847c",
+          "#9da8a1",
+          "#c5cdc8",
+          "#eaf0ed"
+        ]
+      },
+      "warn": {
+        "role": "status",
+        "displayName": "Warn Amber",
+        "canonical": "#9a6200",
+        "oklch": "oklch(54.4% 0.117 70.8)",
+        "tonalRamp": [
+          "#160700",
+          "#371d00",
+          "#5b3600",
+          "#825200",
+          "#a9742d",
+          "#c79c67",
+          "#e6c49d",
+          "#ffeacf"
+        ]
+      },
+      "warn-wash": {
+        "role": "status",
+        "displayName": "Warn Wash",
+        "canonical": "#fbf1dc",
+        "oklch": "oklch(96.0% 0.030 85.6)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#28241b",
+          "#453f33",
+          "#645d4d",
+          "#887f6e",
+          "#aba495",
+          "#cfcabf",
+          "#f2eee6"
+        ]
+      },
+      "bad": {
+        "role": "status",
+        "displayName": "Bad Red",
+        "canonical": "#b42318",
+        "oklch": "oklch(50.0% 0.182 29.5)",
+        "tonalRamp": [
+          "#210000",
+          "#490402",
+          "#76160e",
+          "#a62a1e",
+          "#d14f40",
+          "#ed8272",
+          "#ffb2a4",
+          "#ffded4"
+        ]
+      },
+      "bad-wash": {
+        "role": "status",
+        "displayName": "Bad Wash",
+        "canonical": "#fbe9e7",
+        "oklch": "oklch(94.8% 0.020 25.2)",
+        "tonalRamp": [
+          "#0e0a0a",
+          "#292221",
+          "#473d3c",
+          "#675a59",
+          "#8b7c7b",
+          "#aea1a0",
+          "#d2c8c7",
+          "#f4edec"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#14181d",
+        "oklch": "oklch(20.7% 0.012 254.1)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#222427",
+          "#3d4044",
+          "#5a5e64",
+          "#7c8187",
+          "#a1a5aa",
+          "#c8cbcf",
+          "#eceff1"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#3a4450",
+        "oklch": "oklch(38.2% 0.024 253.1)",
+        "tonalRamp": [
+          "#080b0f",
+          "#20252b",
+          "#394049",
+          "#555f6a",
+          "#77818e",
+          "#9da6b0",
+          "#c5cbd3",
+          "#eaeff5"
+        ]
+      },
+      "mute": {
+        "role": "neutral",
+        "displayName": "Mute",
+        "canonical": "#5b6673",
+        "oklch": "oklch(50.6% 0.025 252.7)",
+        "tonalRamp": [
+          "#080b0f",
+          "#1f252b",
+          "#394049",
+          "#555f6a",
+          "#77818e",
+          "#9da6b0",
+          "#c4cbd3",
+          "#eaeff5"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#cbd4de",
+        "oklch": "oklch(86.6% 0.017 250.9)",
+        "tonalRamp": [
+          "#090b0e",
+          "#212428",
+          "#3b4046",
+          "#575e66",
+          "#7a8189",
+          "#9fa5ac",
+          "#c6cbd1",
+          "#ebeff3"
+        ]
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Line 2",
+        "canonical": "#e3e8ee",
+        "oklch": "oklch(92.9% 0.010 252.8)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#222427",
+          "#3d4043",
+          "#5a5e62",
+          "#7c8186",
+          "#a1a5a9",
+          "#c8cbce",
+          "#edeff1"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "canonical": "#e6ecf2",
+        "oklch": "oklch(94.0% 0.010 247.9)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#222427",
+          "#3d4044",
+          "#5a5e63",
+          "#7c8186",
+          "#a1a5a9",
+          "#c8cbce",
+          "#eceff1"
+        ]
+      },
+      "stock": {
+        "role": "neutral",
+        "displayName": "Stock",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Wash",
+        "canonical": "#f4f7fa",
+        "oklch": "oklch(97.5% 0.005 247.9)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#232425",
+          "#3e4042",
+          "#5c5e60",
+          "#7e8083",
+          "#a3a5a7",
+          "#c9cbcc",
+          "#edeef0"
+        ]
+      },
+      "navy-wash": {
+        "role": "neutral",
+        "displayName": "Navy Wash",
+        "canonical": "#eef3f9",
+        "oklch": "oklch(96.2% 0.010 252.8)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#222427",
+          "#3d4043",
+          "#5a5e62",
+          "#7c8186",
+          "#a1a5a9",
+          "#c8cbce",
+          "#edeff1"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page title, one per screen; the largest type in the system."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "KPI numbers and totals, tabular."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Panel and section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-headings and sender names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text; tables at 14px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Table column headers, sentence case, mute."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Order numbers, part numbers, document IDs."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Text inside the black part tag and B2B/B2C tags."
+      }
+    },
+    "shadows": [],
+    "elevation": [
+      {
+        "name": "select-ring",
+        "value": "inset 0 0 0 2px #123a63",
+        "purpose": "Selected list row, together with navy wash."
+      },
+      {
+        "name": "attention-ring",
+        "value": "inset 0 0 0 1px #c2410c",
+        "purpose": "Option needing action, with a signal border."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid #c2410c; outline-offset: 2px",
+        "purpose": "Keyboard focus on every focusable element."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "desktop",
+        "value": "1440px",
+        "purpose": "Fixed presentation canvas; no responsive breakpoints in the build."
+      }
+    ],
+    "icons": {
+      "grid": "24px",
+      "stroke": 1.75,
+      "linecap": "round",
+      "linejoin": "round",
+      "sizes": [
+        "20px",
+        "16px"
+      ],
+      "source": "makiety/src/common.py ICONS"
+    },
+    "cssVariables": ":root{--navy:#123a63;--sky:#9fc0e3;--sky-ink:#cfe0f1;--ink:#14181d;--ink-2:#3a4450;--mute:#5b6673;--line:#cbd4de;--line-2:#e3e8ee;--ground:#e6ecf2;--stock:#fff;--wash:#f4f7fa;--sig:#c2410c;--sig-ink:#9a3412;--sig-wash:#fdeee6;--ok:#1e7a4c;--ok-wash:#e4f3ea;--s-pet:#0f6e74;--s-vet:#5b3f9e;--s-own:#a8640f;--r:6px}"
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single money-moving action on a screen, or an action someone must take.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Zamawiam i płacę</button>",
+      "css": ".ds-btn{font-family:Archivo,system-ui,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:6px;border:1px solid #cbd4de;background:#fff;color:#14181d;font-weight:600;font-size:14px;cursor:pointer}.ds-btn:focus-visible{outline:2px solid #c2410c;outline-offset:2px}.ds-btn-primary{background:#c2410c;border-color:#c2410c;color:#fff}.ds-btn-primary:hover{background:#9a3412;border-color:#9a3412}"
+    },
+    {
+      "name": "Navy Button",
+      "kind": "button",
+      "refersTo": "button-navy",
+      "description": "Constructive secondary action inside a document.",
+      "html": "<button class=\"ds-btn-navy\">+ Dodaj</button>",
+      "css": ".ds-btn-navy{font-family:Archivo,system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:6px;border:1px solid #123a63;background:#123a63;color:#fff;font-weight:600;font-size:14px;cursor:pointer}.ds-btn-navy:focus-visible{outline:2px solid #c2410c;outline-offset:2px}"
+    },
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Neutral actions: export, apply, retry.",
+      "html": "<button class=\"ds-btn-default\">Eksport XLSX</button>",
+      "css": ".ds-btn-default{font-family:Archivo,system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:6px;border:1px solid #cbd4de;background:#fff;color:#14181d;font-weight:600;font-size:14px;cursor:pointer}.ds-btn-default:hover{border-color:#123a63;color:#123a63}.ds-btn-default:focus-visible{outline:2px solid #c2410c;outline-offset:2px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Search and code fields with a leading icon.",
+      "html": "<label class=\"ds-input\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input placeholder=\"Kod rabatowy\"></label>",
+      "css": ".ds-input{font-family:Archivo,system-ui,sans-serif;display:flex;align-items:center;gap:10px;height:42px;width:280px;border:1px solid #cbd4de;border-radius:6px;background:#fff;padding:0 12px;color:#5b6673;font-size:14px}.ds-input input{border:0;outline:0;font:inherit;color:#14181d;flex:1;background:none}.ds-input input::placeholder{color:#5b6673}.ds-input:focus-within{outline:2px solid #c2410c;outline-offset:2px}"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "chip",
+      "refersTo": "status-pill-ok",
+      "description": "Order and integration status with a leading dot.",
+      "html": "<span class=\"ds-pill ds-ok\">Wysłane</span> <span class=\"ds-pill ds-sig\">Część czeka na ERP</span>",
+      "css": ".ds-pill{font-family:Archivo,system-ui,sans-serif;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:12px;font-size:12.5px;font-weight:600}.ds-pill:before{content:\"\";width:6px;height:6px;border-radius:50%;background:currentColor}.ds-ok{background:#e4f3ea;color:#1e7a4c}.ds-sig{background:#fdeee6;color:#9a3412}"
+    },
+    {
+      "name": "Part Chip",
+      "kind": "chip",
+      "refersTo": "part-chip",
+      "description": "One order part in a table: seller swatch, part number, state.",
+      "html": "<span class=\"ds-part\"><i style=\"background:#0f6e74\"></i>/1 Spółka A</span> <span class=\"ds-part ds-pend\"><i style=\"background:#5b3f9e\"></i>/2 Spółka B</span>",
+      "css": ".ds-part{font-family:Archivo,system-ui,sans-serif;display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 8px 0 6px;border:1px solid #cbd4de;background:#fff;font-size:12.5px;font-weight:600;color:#14181d}.ds-part i{width:8px;height:8px;display:block}.ds-pend{border-color:#c2410c;background:#fdeee6}"
+    },
+    {
+      "name": "Shipping Slip",
+      "kind": "custom",
+      "refersTo": "slip",
+      "description": "Signature: one order part as a label with mono part tag, sender, perforation with notches, items and an invoice footer.",
+      "html": "<div class=\"ds-slip\"><div class=\"ds-slip-h\"><span class=\"ds-n l\"></span><span class=\"ds-n r\"></span><span class=\"ds-tag\">CZĘŚĆ 1/2</span><div class=\"ds-sender\"><b><i></i>Spółka A</b><small>Wysyłka z magazynu — · jutro</small></div></div><div class=\"ds-it\"><span>Dieta weterynaryjna, 2 kg</span><b>118,00 zł</b></div><div class=\"ds-slip-f\"><span>Fakturę wystawi Spółka A · osobna paczka</span><span>Razem <b>140,00 zł</b></span></div></div>",
+      "css": ".ds-slip{font-family:Archivo,system-ui,sans-serif;width:520px;background:#fff;border:1px solid #cbd4de;color:#14181d;font-size:15px}.ds-slip-h{display:flex;align-items:center;gap:16px;min-height:56px;padding:10px 20px;position:relative}.ds-slip-h:after{content:\"\";position:absolute;left:14px;right:14px;bottom:-1px;border-bottom:1.5px dashed #cbd4de}.ds-n{position:absolute;bottom:-8px;width:16px;height:16px;border-radius:50%;background:#e6ecf2;border:1px solid #cbd4de;z-index:1}.ds-n.l{left:-9px;clip-path:inset(0 0 0 50%)}.ds-n.r{right:-9px;clip-path:inset(0 50% 0 0)}.ds-tag{display:inline-flex;align-items:center;height:24px;padding:0 8px;background:#14181d;color:#fff;font-family:\"JetBrains Mono\",ui-monospace,monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em}.ds-sender{display:flex;flex-direction:column;line-height:1.25}.ds-sender b{font-size:16px;font-weight:600;display:flex;align-items:center;gap:8px}.ds-sender b i{width:10px;height:10px;background:#0f6e74}.ds-sender small{font-size:12.5px;color:#5b6673;margin-top:2px}.ds-it{display:flex;justify-content:space-between;padding:16px 20px;font-variant-numeric:tabular-nums}.ds-slip-f{display:flex;justify-content:space-between;padding:12px 20px;background:#f4f7fa;border-top:1px solid #e3e8ee;font-size:14px}"
+    },
+    {
+      "name": "Summary Bill",
+      "kind": "card",
+      "refersTo": "summary-bill",
+      "description": "Consolidated summary: navy top rule, per-seller rows, dashed rule, navy total.",
+      "html": "<div class=\"ds-bill\"><h3>Podsumowanie</h3><div class=\"ds-row\"><span><i style=\"background:#0f6e74\"></i>Spółka A</span><span>140,00 zł</span></div><div class=\"ds-row\"><span><i style=\"background:#a8640f\"></i>Marka własna grupy</span><span>101,00 zł</span></div><div class=\"ds-dash\"></div><div class=\"ds-row\"><b>Do zapłaty</b><span class=\"ds-total\">255,99 zł</span></div></div>",
+      "css": ".ds-bill{font-family:Archivo,system-ui,sans-serif;width:360px;background:#fff;border:1px solid #cbd4de;border-top:4px solid #123a63;padding:18px 22px;color:#14181d}.ds-bill h3{font-size:18px;font-weight:700;letter-spacing:-.01em;margin:0 0 8px}.ds-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-variant-numeric:tabular-nums}.ds-row span{display:inline-flex;align-items:center;gap:8px}.ds-row i{width:10px;height:10px;display:inline-block}.ds-dash{border-top:1.5px dashed #cbd4de;margin:10px 0}.ds-total{font-size:24px;font-weight:800;color:#123a63;letter-spacing:-.01em}"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "side-nav",
+      "description": "App shell navigation on navy; active item flips to white.",
+      "html": "<nav class=\"ds-side\"><a href=\"#\" class=\"on\">Pulpit</a><a href=\"#\">Zamówienia</a><a href=\"#\">Lecznice <span>1</span></a></nav>",
+      "css": ".ds-side{font-family:Archivo,system-ui,sans-serif;width:248px;background:#123a63;padding:14px;display:flex;flex-direction:column;gap:2px}.ds-side a{display:flex;align-items:center;height:40px;padding:0 12px;border-radius:6px;color:#dbe7f3;text-decoration:none;font-size:14px;font-weight:500}.ds-side a:hover{background:#ffffff12}.ds-side a:focus-visible{outline:2px solid #c2410c;outline-offset:2px}.ds-side a.on{background:#fff;color:#123a63;font-weight:700}.ds-side a span{margin-left:auto;background:#c2410c;color:#fff;font-size:11.5px;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 6px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Consolidated Waybill",
+    "overview": "An order is a consolidated letter made of shipping slips: white label stock with a hairline frame, a perforation under each label head, notches, a black mono part tag and a barcode, carried by a navy shell on a cool sorting-table ground. The system is dense and operational at 1440px, with tabular figures and no hero scale. Navy carries brand and structure, signal orange marks only the money-moving action and states that need action, and three seller colours appear only as small swatches.",
+    "keyCharacteristics": [
+      "Square white documents on a cool ground; 6px rounding for controls only.",
+      "Perforation and notches mark where a document divides.",
+      "JetBrains Mono for codes and IDs; Archivo for everything else.",
+      "One signal colour; three seller swatches as identity markers.",
+      "Flat: borders, washes and the navy shell instead of shadows."
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Signal orange marks the single money-moving action on a screen and states that require someone to act.",
+        "section": "colors"
+      },
+      {
+        "name": "The Swatch-Only Rule",
+        "body": "Seller colours appear as small squares, chart series or pack bands, never as text, fills behind text or buttons.",
+        "section": "colors"
+      },
+      {
+        "name": "The Label-Print Rule",
+        "body": "Mono is for machine-printed things: codes, part numbers, order and document IDs.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number in tables, bills, figures and prices uses tabular numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Divider-Not-Gap Rule",
+        "body": "Items inside a document are split by 1px rules; documents are split by ground.",
+        "section": "layout"
+      },
+      {
+        "name": "The Paper-on-Table Rule",
+        "body": "Documents lie flat on the ground; they never float.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Torn-Here Rule",
+        "body": "A dashed rule means the document divides here; never decoration.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do show every order part as its own slip with tag, sender, warehouse and footer where documents, shipments or refunds are explained.",
+      "Do keep documents square and controls at 6px.",
+      "Do put codes, part numbers and document IDs in JetBrains Mono, and every number in tabular figures.",
+      "Do separate rows inside a document with hairlines and documents with 20px of ground.",
+      "Do reserve signal orange for the money-moving action and states someone must act on.",
+      "Do use the self-hosted Archivo and JetBrains Mono and the supplied [Marka] logotype."
+    ],
+    "donts": [
+      "Don't add drop shadows to documents, buttons or panels.",
+      "Don't round slips, panels, tags or thumbnails.",
+      "Don't use seller colours for text, fills behind text or buttons.",
+      "Don't merge a multi-seller order into one undivided list where the split matters.",
+      "Don't use the dashed perforation as decoration where nothing divides.",
+      "Don't use photographs or third-party product brands for products; use the generic packs."
+    ]
+  }
+}
