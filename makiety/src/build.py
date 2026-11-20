@@ -204,7 +204,7 @@ def koszyk():
     .it-n{display:flex;flex-direction:column;gap:3px}.it-n b{font-size:15.5px;font-weight:600}.it-n span{font-size:13px}
     .it-p{text-align:right;font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
     .sugg{display:grid;grid-template-columns:72px 1fr auto auto;gap:18px;align-items:center;padding:16px 20px;border:1px dashed var(--navy);background:#eef3f9}
-    .sugg .k{font-size:12.5px;color:var(--navy);font-weight:700;display:flex;gap:6px;align-items:center}
+    .sugg-h{display:flex;gap:8px;align-items:center;font-size:16px;margin:28px 0 10px}.sugg-h .ic{color:var(--navy)}
     .bill{background:var(--stock);border:1px solid var(--line);border-top:4px solid var(--navy)}
     .bill-h{padding:18px 22px 10px;display:flex;justify-content:space-between;align-items:baseline}
     .bill-b{padding:0 22px 22px}
@@ -241,8 +241,9 @@ def koszyk():
     {item("pouch", "own", "Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.", "Kąski funkcjonalne dla psa", 101)}
     <div class="slip-f"><span>Fakturę wystawi Marka własna grupy · osobna paczka</span><span>Razem <b>{zl(101)}</b></span></div>
   </div>
+  <h2 class="sugg-h">{ic("paw")}Pasuje do diety w koszyku</h2>
   <div class="sugg"><div class="thumb">{product("tray", "own")}</div>
-    <div><span class="k">{ic("paw","s")}Pasuje do diety w koszyku</span><b style="display:block;margin-top:4px;font-weight:600">Karma funkcjonalna na jelita, dzik i jabłko, 400 g</b><span class="mute" style="font-size:13px">Trafi do paczki 2 – bez dopłaty do dostawy</span></div>
+    <div><b style="display:block;font-weight:600">Karma funkcjonalna na jelita, dzik i jabłko, 400 g</b><span class="mute" style="font-size:13px">Trafi do paczki 2 – bez dopłaty do dostawy</span></div>
     <div style="text-align:right;font-weight:700;font-size:16px"><span class="price-old">{zl(16)}</span>{zl(15)}</div>
     <a class="btn navy" href="#">{ic("plus","s")}Dodaj</a></div>
 </section>
