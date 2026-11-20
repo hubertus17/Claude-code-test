@@ -598,18 +598,18 @@ def strefa():
     for v in range(0, 9001, 3000):
         y = T + ph - v / vmax * ph
         g += f'<line x1="{L}" x2="{L+pw}" y1="{y:.1f}" y2="{y:.1f}" stroke="{"#9aa7b4" if v == 0 else "#e3e8ee"}"/><text x="{L-8}" y="{y+4:.1f}" text-anchor="end">{v//1000} tys.</text>'
-    g += f'<text x="{L-8}" y="{H-8}" text-anchor="end" fill="#9a3412" font-weight="600">prowizja</text>'
+    g += f'<text x="{L-8}" y="{H-8}" text-anchor="end" fill="#3a4450" font-weight="600">prowizja</text>'
     for i, v in enumerate(turn):
         x = L + i * bw + 6
         h = v / vmax * ph
         cx = x + (bw - 12) / 2
         g += f'<rect x="{x:.1f}" y="{T+ph-h:.1f}" width="{bw-12:.1f}" height="{h:.1f}" fill="{"#123a63" if i == 11 else "#9fc0e3"}"/>'
         g += f'<text x="{cx:.1f}" y="{T+ph+16}" text-anchor="middle">{months[i]}</text>'
-        g += f'<text x="{cx:.1f}" y="{H-8}" text-anchor="middle" fill="#9a3412" font-weight="600">{round(v*0.1)} zł</text>'
+        g += f'<text x="{cx:.1f}" y="{H-8}" text-anchor="middle" fill="#14181d" font-weight="600">{round(v*0.1)} zł</text>'
     chart = f'<svg viewBox="0 0 {W} {H}" width="100%" style="display:block;font:11.5px Archivo;fill:#5b6673">{g}</svg>'
 
     tx = [("Ann***", "19.11.2026", 241.00), ("Tom***", "18.11.2026", 412.40), ("Kas***", "18.11.2026", 118.00),
-          ("Mar***", "16.11.2026", 342.50), ("Jak***", "15.11.2026", 89.90), ("Ewa***", "14.11.2026", 204.10)]
+          ("Mar***", "16.11.2026", 342.50)]
     txr = "".join(f'<tr><td><span class="who">{c}</span></td><td>{d}</td><td class="r">{zl(v)}</td><td class="r strong">{zl(v*0.1)}</td></tr>' for c, d, v in tx)
 
     accts = [("pet", 20000, 12480, 2140.50, "PL 61 1090 1014 0000 0712 1981 2874"),
@@ -644,20 +644,23 @@ def strefa():
     .opk .ph{font-size:13px;color:#fff;margin-left:12px;display:flex;gap:6px;align-items:center;border-left:1px solid #ffffff30;padding-left:12px}
     .wrap{padding:28px 48px 48px}
     .top{display:flex;align-items:flex-end;margin-bottom:20px}
-    .grid{display:grid;grid-template-columns:1fr 440px;gap:20px;align-items:start;margin-bottom:20px}
+    .grid{display:grid;grid-template-columns:1fr 440px;gap:20px;align-items:stretch;margin-bottom:20px}
+    .grid > .col:last-child > .panel{flex:1;display:flex;flex-direction:column}.grid .oa{margin-top:auto}
+    .acc3{display:grid;grid-template-columns:repeat(3,1fr)}.acc3 .acc{border-bottom:0;border-right:1px solid var(--line-2)}.acc3 .acc:last-child{border-right:0}
+    .iban{flex-direction:column;gap:2px}
     .figs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line-2)}
     .figs .fig{padding:16px 20px;border-right:1px solid var(--line-2)}.figs .fig:last-child{border-right:0}
     .figs .fig.hl{background:var(--sig-wash)}
     .legend{display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
     .legend span{display:flex;gap:6px;align-items:center}
     .og{display:flex;gap:10px;align-items:center;padding:10px 20px;background:var(--wash);border-bottom:1.5px dashed var(--line)}.og b{margin-left:auto}
-    .oi{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:8px 20px;border-bottom:1px solid var(--line-2);font-size:13.5px}
+    .oi{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:13px 20px;border-bottom:1px solid var(--line-2);font-size:13.5px}
     .oi .thumb.sm{width:40px;height:40px}.oi .thumb.sm svg{width:30px;height:30px}
     .oi b{font-weight:600}.oi .sub{display:flex;gap:6px;align-items:center;font-size:12.5px;color:var(--mute);margin-top:2px}
     .thumb.sm{width:52px;height:52px}.thumb.sm svg{width:40px;height:40px}
     .oa{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--wash)}
     .oa b{font-size:20px;font-weight:800;color:var(--navy)}
-    .bottom{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    .col{display:flex;flex-direction:column;gap:20px;min-width:0}
     .who{font-family:var(--mono);font-weight:600;background:var(--wash);padding:3px 8px;border:1px solid var(--line-2)}
     .priv{display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--mute)}
     .acc{padding:14px 20px;border-bottom:1px solid var(--line-2)}.acc:last-child{border-bottom:0}
@@ -674,28 +677,30 @@ def strefa():
   <div class="top"><div><h1>Dzień dobry, dr Anna Wiśniewska</h1><p class="mute" style="margin-top:4px">Twoja prowizja: 10% od zakupów klientów przypisanych do lecznicy · 186 klientów</p></div>
     <a class="btn navy" style="margin-left:auto" href="#">{ic("upload","s")}Wgraj fakturę prowizyjną</a></div>
   <div class="grid">
+    <div class="col">
     <section class="panel">
       <div class="figs">
         <div class="fig"><small>Prowizja naliczona</small><b>{zl(4286.40)}</b><span class="mute" style="font-size:12.5px">od początku roku</span></div>
         <div class="fig"><small>Prowizja rozliczona</small><b>{zl(3118.20)}</b><span class="mute" style="font-size:12.5px">wypłacona na Twój rachunek</span></div>
         <div class="fig hl"><small>Do rozliczenia</small><b style="color:var(--sig-ink)">{zl(1168.20)}</b><span style="font-size:12.5px;color:var(--sig-ink)">wgraj fakturę, by otrzymać wypłatę</span></div>
       </div>
-      <div class="panel-h" style="border-bottom:0;padding-bottom:4px"><h2>Obrót i prowizja</h2><div class="legend" style="margin-left:16px"><span><i class="sw" style="background:#9fc0e3"></i>Obrót klientów</span><span style="color:#9a3412">Prowizja 10% pod osią</span></div>
+      <div class="panel-h" style="border-bottom:0;padding-bottom:4px"><h2>Obrót i prowizja</h2><div class="legend" style="margin-left:16px"><span><i class="sw" style="background:#9fc0e3"></i>Obrót klientów</span><span class="mute">Prowizja 10% w wierszu pod osią</span></div>
         <div class="r"><div class="seg"><span class="on">Miesiąc</span><span>Kwartał</span><span>Rok</span></div></div></div>
       <div style="padding:4px 16px 12px">{chart}</div>
     </section>
+    <section class="panel"><div class="panel-h"><h2>Transakcje z rekomendacji</h2><span class="priv r">{ic("eyeoff","s")}Bez koszyka, adresu i telefonu klienta</span></div>
+      <table class="tbl"><thead><tr><th>Klient</th><th>Data</th><th class="r">Wartość produktów</th><th class="r">Prowizja 10%</th></tr></thead><tbody>{txr}</tbody></table></section>
+    </div>
+    <div class="col">
     <section class="panel">
       <div class="panel-h"><h2>Oferta od opiekuna do akceptacji</h2><span class="pill sig">Nowa</span></div>
       <div style="padding:10px 20px;font-size:13px;color:var(--ink-2);border-bottom:1px solid var(--line-2)">Marek Zieliński · 20.11.2026 · ważna do 04.12.2026</div>
       {oi}
       <div class="oa"><div><span class="mute" style="font-size:12.5px;display:block">Razem netto · 3 faktury</span><b class="num">{zl(5259.60)}</b></div><a class="btn primary lg" href="#">{ic("check","s")}Akceptuj</a></div>
     </section>
+    </div>
   </div>
-  <div class="bottom">
-    <section class="panel"><div class="panel-h"><h2>Transakcje z rekomendacji</h2><span class="priv r">{ic("eyeoff","s")}Bez koszyka, adresu i telefonu klienta</span></div>
-      <table class="tbl"><thead><tr><th>Klient</th><th>Data</th><th class="r">Wartość produktów</th><th class="r">Prowizja 10%</th></tr></thead><tbody>{txr}</tbody></table></section>
-    <section class="panel"><div class="panel-h"><h2>Limity kupieckie i należności</h2><span class="mute" style="font-size:12.5px;margin-left:auto">osobno dla każdego sprzedawcy</span></div>{acc}</section>
-  </div>
+  <section class="panel lims"><div class="panel-h"><h2>Limity kupieckie i należności</h2><span class="mute" style="font-size:12.5px;margin-left:auto">osobno dla każdego sprzedawcy, każdy z własnym rachunkiem</span></div><div class="acc3">{acc}</div></section>
 </div>'''
     return page("Strefa lecznicy", body, css)
 
