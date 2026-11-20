@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulpit przepływu</title>
+<link rel="stylesheet" href="../assets/sunreef.css">
+<style>
+.grid1{display:grid;grid-template-columns:1fr 372px;gap:20px;align-items:start}
+.legend{display:flex;gap:18px;font-size:13.5px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.g-mat{width:12px;height:12px;background:var(--sea);border-radius:2px;flex:none}
+.g-form{width:11px;height:11px;background:var(--gel);transform:rotate(45deg);border-radius:1.5px;flex:none;margin:0 1px}
+.g-alert{width:13px;height:13px;background:var(--alert);border-radius:50%;flex:none}
+.map{position:relative;height:566px;background:
+  linear-gradient(var(--line-2) 1px,transparent 1px) 0 0/28px 28px,
+  linear-gradient(90deg,var(--line-2) 1px,transparent 1px) 0 0/28px 28px,var(--wash);overflow:hidden}
+.bld{position:absolute;background:var(--stock);border:2px solid var(--ink-2)}
+.bld>.bn,.yard>.bn{position:absolute;top:-10px;left:12px;background:var(--wash);color:var(--ink-2);font-size:12.5px;font-weight:600;padding:0 6px;line-height:18px}
+.yard{position:absolute;border:2px dashed var(--mute);background:repeating-linear-gradient(135deg,transparent 0 9px,rgba(92,104,115,.07) 9px 10px)}
+
+.zone{position:absolute;border:1px solid var(--seam);background:var(--stock);padding:12px;display:flex;flex-direction:column;gap:8px}
+.zone.w{background:#f9fafb}
+.zn{font-weight:700;font-size:14.5px;white-space:nowrap;color:var(--ink);padding-right:30px;line-height:1.25}
+.zalert{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:var(--alert);color:#fff;display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:15px;box-shadow:0 0 0 3px var(--stock)}
+.mk{display:inline-flex;align-items:center;gap:8px;color:var(--ink);align-self:flex-start;margin:2px 0}
+.mk:hover{text-decoration:none}.mk:hover span{text-decoration:underline}
+.mk b{font-family:var(--num);font-weight:700;font-size:46px;line-height:.9;letter-spacing:-.01em}
+.mk span{font-size:14px;color:var(--ink-2);font-weight:600;line-height:1.2;max-width:92px}
+.mk .g-mat,.mk .g-form{align-self:center}
+.mk.mat b{color:var(--sea-ink)}.mk.form b{color:var(--gel-ink)}
+.slots{position:absolute;display:grid;gap:8px 6px}
+.slots i{display:block;height:22px;border:1px dashed var(--seam);background:rgba(255,255,255,.6)}
+.dots{display:grid;gap:5px;margin:2px 0 4px 2px}
+.dots i{width:14px;height:14px;display:block}
+.dots.mat i{background:var(--sea);border-radius:2px;opacity:.85}
+.dots.form i{background:var(--gel);transform:rotate(45deg) scale(.78);border-radius:2px}
+.dots i.x{box-shadow:0 0 0 2px var(--stock),0 0 0 4px var(--alert);opacity:1}
+.mapnote{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--mute);margin-left:14px;font-weight:500}
+.mapnote svg{width:15px;height:15px}
+.react .panel-h h2{font-size:17px}
+.cnt{font-family:var(--num);font-weight:700;font-size:15px;background:var(--alert);color:#fff;border-radius:10px;min-width:24px;height:22px;display:grid;place-items:center;padding:0 6px}
+.nw{white-space:nowrap}
+.ri{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line-2)}
+.ri:last-child{border-bottom:0}
+.ri .ico{width:34px;height:34px;border-radius:var(--r);display:grid;place-items:center}
+.ri .ico.mat{background:var(--sea-wash);color:var(--sea-ink)}
+.ri .ico.form{background:var(--gel-wash);color:var(--gel-ink)}
+.ri .ico.al{background:var(--alert-wash);color:var(--alert-ink)}
+.ri h3{font-size:15px;font-weight:700;line-height:1.3}
+.ri p{font-size:14px;color:var(--ink-2);margin-top:3px;line-height:1.45}
+.ri .hl{display:inline-flex;align-items:center;gap:5px;font-weight:600;font-size:14px;margin-top:6px}
+.ri .hl svg{width:15px;height:15px}
+.plan{display:flex;align-items:center;gap:8px;margin-top:8px}
+.plan .bar{position:relative;flex:1;height:8px;background:var(--line-2);border-radius:4px}
+.plan .bar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--alert);border-radius:4px}
+.plan .bar u{position:absolute;top:-4px;bottom:-4px;left:89.3%;width:2px;background:var(--ink)}
+.plan small{font-size:12px;color:var(--mute);white-space:nowrap}
+.loc2{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;font-size:13.5px;margin-top:6px;color:var(--ink-2)}
+.loc2 dt{color:var(--mute)}
+.loc2 dd{font-weight:600;color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand"><span class="logo" role="img" aria-label="Logo Sunreef Yachts" style="display:block;width:200px;height:32px;background:var(--rail-2);border:1px dashed var(--rail-3);border-radius:3px"></span><span class="sub">Materiał i formy · produkcja</span></div>
+    <nav class="nav"><a href="01-pulpit.html" class="on" aria-current="page"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>Pulpit</span></a><a href="04-historia-partii.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 9.5 4.8L12 12 2.5 7.3z"/><path d="m2.5 12 9.5 4.8 9.5-4.8"/><path d="m2.5 16.7 9.5 4.8 9.5-4.8"/></svg><span>Materiał</span></a><a href="06-paszport-formy.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9h19l-2.2 9.5H4.7z"/><path d="M7 9V5.5h10V9"/><path d="M8 13.5h8"/></svg><span>Formy</span></a><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg><span>Inwentaryzacje</span></a><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2z"/><path d="M14 9h4l4 4v3h-8z"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg><span>Dostawy na stanowiska</span></a><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><span>Zgłoszenia strat</span></a><a href="03-raport-tygodniowy.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7.5 16v-4"/><path d="M12.5 16V8"/><path d="M17.5 16V5"/></svg><span>Raporty</span></a><a href="01-pulpit.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span>Alerty</span><span class="ct">4</span></a><div class="sep"></div><a href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg><span>Administracja</span></a></nav>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <div class="crumbs"><span class="cur">Pulpit</span></div>
+      <div class="user"><span class="av">AZ</span><span><b>Anna Zielińska</b> · Kierownik produkcji</span></div>
+    </header>
+    <main class="page">
+<div class="head"><div><h1>Gdzie jest materiał i formy</h1>
+<p class="lede"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>Stan na 20.11.2026, 10:00 · lokalizacja według ostatniego skanu</p></div></div>
+<div class="filters"><button class="sel">Projekt: <b>wszystkie</b><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><button class="sel">Etap: <b>wszystkie</b><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><button class="sel">Dostawca: <b>wszyscy</b><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><button class="sel">Data: <b>ostatnie 7 dni</b><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div>
+<div class="grid1">
+  <section class="panel">
+    <div class="panel-h"><h2>Plan zakładu</h2><span class="mapnote"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>pozycje według ostatniego skanu</span><div class="legend r"><span><i class="g-mat"></i>Partia materiału</span><span><i class="g-form"></i>Forma</span><span><i class="g-alert"></i>Alert</span></div></div>
+    
+<div class="map">
+  <div class="bld" style="left:18px;top:20px;width:196px;height:262px">
+    <div class="zone w" style="left:9px;top:9px;right:9px;bottom:9px"><div class="zn">Magazyn główny</div><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>52</b><span>partie materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+  </div>
+  <div class="bld" style="left:18px;top:300px;width:196px;height:246px">
+    <div class="zone " style="left:9px;top:9px;right:9px;bottom:9px"><div class="zn">Hala 1 – strefa A</div><span class="zalert" title="Alert">1</span><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>9</b><span>partii materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class="x"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>2</b><span>formy</span></a><div class="dots form" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i></div></div>
+  </div>
+  <div class="bld" style="left:232px;top:20px;width:280px;height:526px"><span class="bn">Hala 2</span>
+    <div class="zone " style="left:9px;top:16px;right:9px;height:250px"><div class="zn">Hala 2 – strefa B</div><span class="zalert" title="Alert">1</span><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>14</b><span>partii materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(7,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="x"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+    <div class="zone " style="left:9px;top:276px;right:9px;bottom:9px"><div class="zn">Hala 2 – strefa D</div><span class="zalert" title="Alert">1</span><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>4</b><span>formy</span></a><div class="dots form" style="grid-template-columns:repeat(7,14px)"><i class="x"></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+  </div>
+  <div class="yard" style="left:530px;top:20px;right:18px;height:526px">
+    <div class="zone " style="left:9px;top:9px;right:9px;height:257px"><div class="zn">Plac form – rząd C</div><span class="zalert" title="Alert">1</span><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>17</b><span>form</span></a><div class="dots form" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="x"></i></div></div>
+    <div class="slots" style="left:14px;right:14px;top:290px;grid-template-columns:repeat(6,1fr)"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+</div>
+  </section>
+  <section class="panel react">
+    <div class="panel-h"><h2>Wymaga reakcji (4)</h2><span class="cnt r">4</span></div>
+    <div class="ri"><span class="ico mat"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg></span><div><h3>Materiał bez ruchu 14 dni</h3><p>Fornir teakowy · partia <span class="mono">M-23990</span> · <span class="nw">Hala 1 – strefa A</span></p><a class="hl" href="04-historia-partii.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>Pokaż historię</a></div></div><div class="ri"><span class="ico form"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9h19l-2.2 9.5H4.7z"/><path d="M7 9V5.5h10V9"/><path d="M8 13.5h8"/></svg></span><div><h3>Forma nieużywana 63 dni</h3><p><span class="mono">F-021</span> · Forma pokładu Sunreef 80 · <span class="nw">Hala 2 – strefa D</span></p><a class="hl" href="06-paszport-formy.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>Pokaż historię</a></div></div><div class="ri"><span class="ico al"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></span><div><h3>Przekroczone planowane zużycie</h3><p><span class="hull"><span class="sn" aria-hidden="true">08</span><span>Sunreef 80 Electric · jednostka 08</span></span> · sklejka okoume 15 mm: <b>112% planu</b></p><div class="plan"><div class="bar"><i></i><u></u></div><small>plan 100%</small></div><a class="hl" href="04-historia-partii.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>Pokaż historię</a></div></div><div class="ri"><span class="ico form"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span><div><h3>Nieoczekiwana lokalizacja</h3><p><span class="mono">F-087</span> · Forma blatu kambuza</p><dl class="loc2"><dt>zeskanowana:</dt><dd>Plac form – rząd C</dd><dt>oczekiwana:</dt><dd>Hala 2 – strefa D</dd></dl><a class="hl" href="06-paszport-formy.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>Pokaż historię</a></div></div>
+  </section>
+</div></main>
+  </div>
+</div>
+</body>
+</html>
