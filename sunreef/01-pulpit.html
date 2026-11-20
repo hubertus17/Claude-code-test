@@ -16,20 +16,19 @@
   linear-gradient(var(--line-2) 1px,transparent 1px) 0 0/28px 28px,
   linear-gradient(90deg,var(--line-2) 1px,transparent 1px) 0 0/28px 28px,var(--wash);overflow:hidden}
 .bld{position:absolute;background:var(--stock);border:2px solid var(--ink-2)}
-.bld>.bn{position:absolute;top:-1px;left:-1px;background:var(--ink-2);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px}
+.bld>.bn,.yard>.bn{position:absolute;top:-10px;left:12px;background:var(--wash);color:var(--ink-2);font-size:12.5px;font-weight:600;padding:0 6px;line-height:18px}
 .yard{position:absolute;border:2px dashed var(--mute);background:repeating-linear-gradient(135deg,transparent 0 9px,rgba(92,104,115,.07) 9px 10px)}
-.yard>.bn{position:absolute;top:-1px;left:-1px;background:var(--mute);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px}
+
 .zone{position:absolute;border:1px solid var(--seam);background:var(--stock);padding:12px;display:flex;flex-direction:column;gap:8px}
 .zone.w{background:#f9fafb}
 .zn{font-weight:700;font-size:14.5px;white-space:nowrap;color:var(--ink);padding-right:30px;line-height:1.25}
 .zalert{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:var(--alert);color:#fff;display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:15px;box-shadow:0 0 0 3px var(--stock)}
-.mk{display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 12px 0 10px;border:1px solid var(--line);border-radius:var(--r);background:var(--stock);color:var(--ink);align-self:flex-start;white-space:nowrap}
-.mk:hover{text-decoration:none;border-color:var(--ink-2)}
-.mk b{font-family:var(--num);font-weight:700;font-size:25px;line-height:1;letter-spacing:.005em}
-.mk span{font-size:13.5px;color:var(--ink-2);font-weight:500}
+.mk{display:inline-flex;align-items:center;gap:8px;color:var(--ink);align-self:flex-start;margin:2px 0}
+.mk:hover{text-decoration:none}.mk:hover span{text-decoration:underline}
+.mk b{font-family:var(--num);font-weight:700;font-size:46px;line-height:.9;letter-spacing:-.01em}
+.mk span{font-size:14px;color:var(--ink-2);font-weight:600;line-height:1.2;max-width:92px}
+.mk .g-mat,.mk .g-form{align-self:center}
 .mk.mat b{color:var(--sea-ink)}.mk.form b{color:var(--gel-ink)}
-.mk.mat{border-color:#bcd0e8;background:var(--sea-wash)}
-.mk.form{border-color:#efcfb4;background:var(--gel-wash)}
 .slots{position:absolute;display:grid;gap:8px 6px}
 .slots i{display:block;height:22px;border:1px dashed var(--seam);background:rgba(255,255,255,.6)}
 .dots{display:grid;gap:5px;margin:2px 0 4px 2px}
@@ -82,18 +81,18 @@
     <div class="panel-h"><h2>Plan zakładu</h2><span class="mapnote"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>pozycje według ostatniego skanu</span><div class="legend r"><span><i class="g-mat"></i>Partia materiału</span><span><i class="g-form"></i>Forma</span><span><i class="g-alert"></i>Alert</span></div></div>
     
 <div class="map">
-  <div class="bld" style="left:18px;top:20px;width:196px;height:262px"><span class="bn">Magazyn</span>
-    <div class="zone w" style="left:9px;top:30px;right:9px;bottom:9px"><div class="zn">Magazyn główny</div><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>52</b><span>partie materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+  <div class="bld" style="left:18px;top:20px;width:196px;height:262px">
+    <div class="zone w" style="left:9px;top:9px;right:9px;bottom:9px"><div class="zn">Magazyn główny</div><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>52</b><span>partie materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
   </div>
-  <div class="bld" style="left:18px;top:300px;width:196px;height:246px"><span class="bn">Hala 1</span>
-    <div class="zone " style="left:9px;top:30px;right:9px;bottom:9px"><div class="zn">Hala 1 – strefa A</div><span class="zalert" title="Alert">1</span><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>9</b><span>partii materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class="x"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>2</b><span>formy</span></a><div class="dots form" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i></div></div>
+  <div class="bld" style="left:18px;top:300px;width:196px;height:246px">
+    <div class="zone " style="left:9px;top:9px;right:9px;bottom:9px"><div class="zn">Hala 1 – strefa A</div><span class="zalert" title="Alert">1</span><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>9</b><span>partii materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class="x"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>2</b><span>formy</span></a><div class="dots form" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i></div></div>
   </div>
   <div class="bld" style="left:232px;top:20px;width:280px;height:526px"><span class="bn">Hala 2</span>
-    <div class="zone " style="left:9px;top:30px;right:9px;height:236px"><div class="zn">Hala 2 – strefa B</div><span class="zalert" title="Alert">1</span><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>14</b><span>partii materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(7,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="x"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+    <div class="zone " style="left:9px;top:16px;right:9px;height:250px"><div class="zn">Hala 2 – strefa B</div><span class="zalert" title="Alert">1</span><a class="mk mat" href="04-historia-partii.html"><span class="g-mat"></span><b>14</b><span>partii materiału</span></a><div class="dots mat" style="grid-template-columns:repeat(7,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="x"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
     <div class="zone " style="left:9px;top:276px;right:9px;bottom:9px"><div class="zn">Hala 2 – strefa D</div><span class="zalert" title="Alert">1</span><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>4</b><span>formy</span></a><div class="dots form" style="grid-template-columns:repeat(7,14px)"><i class="x"></i><i class=""></i><i class=""></i><i class=""></i></div></div>
   </div>
-  <div class="yard" style="left:530px;top:20px;right:18px;height:526px"><span class="bn">Plac form</span>
-    <div class="zone " style="left:9px;top:30px;right:9px;height:236px"><div class="zn">Plac form – rząd C</div><span class="zalert" title="Alert">1</span><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>16</b><span>form</span></a><div class="dots form" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="x"></i></div></div>
+  <div class="yard" style="left:530px;top:20px;right:18px;height:526px">
+    <div class="zone " style="left:9px;top:9px;right:9px;height:257px"><div class="zn">Plac form – rząd C</div><span class="zalert" title="Alert">1</span><a class="mk form" href="06-paszport-formy.html"><span class="g-form"></span><b>16</b><span>form</span></a><div class="dots form" style="grid-template-columns:repeat(8,14px)"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="x"></i></div></div>
     <div class="slots" style="left:14px;right:14px;top:290px;grid-template-columns:repeat(6,1fr)"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   </div>
 </div>

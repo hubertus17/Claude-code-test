@@ -2,7 +2,7 @@
 
 /* ── Tokens ───────────────────────────────────────────── */
 :root{
-  --ground:#eef1f3;      /* sailcloth, cool */
+  --ground:#f3f5f6;      /* sailcloth, cool */
   --stock:#ffffff;
   --wash:#f6f8f9;
   --rail:#1a2026;        /* carbon laminate */
@@ -32,6 +32,7 @@
   --warn-line:#e9c98a;
   --ok:#1d7448;
   --ok-wash:#e2f1e8;
+  --sail-wash:#e4e9f1;
 
   --ui:'Barlow',system-ui,sans-serif;
   --num:'Barlow Condensed','Barlow',system-ui,sans-serif;
@@ -107,7 +108,7 @@ h2{font-size:16px;font-weight:700;letter-spacing:-.005em}
 .panel{background:var(--stock);border:1px solid var(--line)}
 .panel-h{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line-2)}
 .panel-h .r{margin-left:auto}
-.badge{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:12px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 8px;border-radius:4px;font-size:12.5px;font-weight:600;white-space:nowrap}
 .badge.warn{background:var(--warn-wash);color:var(--warn)}
 .badge.alert{background:var(--alert-wash);color:var(--alert-ink)}
 .badge.ok{background:var(--ok-wash);color:var(--ok)}

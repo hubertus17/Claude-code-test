@@ -50,7 +50,7 @@ CSS2 = """
 .sheet h2{font-size:20px;display:flex;align-items:center}
 .sheet h2 button{margin-left:auto;width:36px;height:36px;display:grid;place-items:center;border-radius:var(--r);background:var(--stock);border:1px solid var(--line)}
 .cats{display:flex;flex-wrap:wrap;gap:8px}
-.cats span{height:40px;padding:0 14px;border:1px solid var(--line);border-radius:20px;background:var(--stock);display:inline-flex;align-items:center;font-weight:600;font-size:14.5px;color:var(--ink-2)}
+.cats span{height:40px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--stock);display:inline-flex;align-items:center;font-weight:600;font-size:14.5px;color:var(--ink-2)}
 .cats span.on{background:var(--rail);border-color:var(--rail);color:#fff}
 .cats span.on svg{width:16px;height:16px;margin-right:6px}
 .inp.sm{min-height:48px;font-size:15.5px}
@@ -60,7 +60,7 @@ CSS2 = """
 .desc{background:var(--stock);border:1px solid var(--line);border-radius:var(--r);padding:12px 12px 10px;display:flex;flex-direction:column;gap:10px}
 .desc p{font-size:15px;color:var(--mute);min-height:40px}
 .desc .tools{display:flex;gap:8px}
-.desc .tools span{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:18px;background:var(--wash);border:1px solid var(--line);font-weight:600;font-size:14px}
+.desc .tools span{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:var(--r);background:var(--wash);border:1px solid var(--line);font-weight:600;font-size:14px}
 .desc .tools svg{width:17px;height:17px}
 .bigbtn.red{background:var(--alert)}
 """
@@ -109,7 +109,7 @@ CSS5 = """
 .vf .frame i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0;border-radius:0 8px 0 0}
 .vf .frame i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0;border-radius:0 0 0 8px}
 .vf .frame i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0;border-radius:0 0 8px 0}
-.vf .st{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:var(--ok);color:#fff;font-weight:700;font-size:15px;height:34px;padding:0 14px 0 10px;border-radius:17px;display:flex;align-items:center;gap:7px}
+.vf .st{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:var(--ok);color:#fff;font-weight:700;font-size:15px;height:34px;padding:0 14px 0 10px;border-radius:var(--r);display:flex;align-items:center;gap:7px}
 .vf .st svg{width:19px;height:19px;stroke:#fff}
 .vf .bk{position:absolute;left:14px;top:12px;width:36px;height:36px;border-radius:var(--r);background:rgba(0,0,0,.45);display:grid;place-items:center}
 .vf .bk svg{stroke:#fff}
@@ -194,7 +194,7 @@ CSS7 = """
 .it.unx .g{background:var(--warn-wash);color:var(--warn)}
 .it.okk .g{background:var(--ok-wash);color:var(--ok)}
 .it .t{font-size:15px;font-weight:600;line-height:1.3}
-.it .t .badge{margin-right:6px;vertical-align:1px}
+.it .t .badge{display:flex;width:max-content;margin-bottom:5px}
 .it .d{font-size:13.5px;color:var(--mute);margin-top:4px;line-height:1.4}
 .it.okk{padding:11px 14px}
 .it.okk .t{font-weight:500}
@@ -216,7 +216,7 @@ def screen7():
     <div class="it miss"><span class="g">{ic("x")}</span><div><div class="t"><span class="badge alert">Brak</span><span class="mono">F-131</span> · Forma pokrywy luku</div><div class="d">ostatni skan: Plac form – rząd C, 02.10.2026</div></div></div>
     <div class="it unx"><span class="g">{ic("straty")}</span><div><div class="t"><span class="badge warn">Nieoczekiwana</span><span class="mono">F-087</span> · Forma blatu kambuza</div><div class="d">oczekiwana lokalizacja: Hala 2 – strefa D</div></div></div>
   </div>
-  <div class="sec">Zgodne (15)<span class="chev">{ic("down")}</span></div>
+  <div class="sec">Zgodne (15)</div>
   <div class="list">
     <div class="it okk"><span class="g">{ic("check")}</span><div class="t"><span class="mono">F-112</span> · Forma panelu sufitowego salonu</div></div>
     <div class="it okk"><span class="g">{ic("check")}</span><div class="t"><span class="mono">F-095</span> · Forma osłony grilla</div></div>

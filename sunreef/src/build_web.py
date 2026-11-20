@@ -29,20 +29,19 @@ CSS1 = """
   linear-gradient(var(--line-2) 1px,transparent 1px) 0 0/28px 28px,
   linear-gradient(90deg,var(--line-2) 1px,transparent 1px) 0 0/28px 28px,var(--wash);overflow:hidden}
 .bld{position:absolute;background:var(--stock);border:2px solid var(--ink-2)}
-.bld>.bn{position:absolute;top:-1px;left:-1px;background:var(--ink-2);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px}
+.bld>.bn,.yard>.bn{position:absolute;top:-10px;left:12px;background:var(--wash);color:var(--ink-2);font-size:12.5px;font-weight:600;padding:0 6px;line-height:18px}
 .yard{position:absolute;border:2px dashed var(--mute);background:repeating-linear-gradient(135deg,transparent 0 9px,rgba(92,104,115,.07) 9px 10px)}
-.yard>.bn{position:absolute;top:-1px;left:-1px;background:var(--mute);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px}
+
 .zone{position:absolute;border:1px solid var(--seam);background:var(--stock);padding:12px;display:flex;flex-direction:column;gap:8px}
 .zone.w{background:#f9fafb}
 .zn{font-weight:700;font-size:14.5px;white-space:nowrap;color:var(--ink);padding-right:30px;line-height:1.25}
 .zalert{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:var(--alert);color:#fff;display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:15px;box-shadow:0 0 0 3px var(--stock)}
-.mk{display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 12px 0 10px;border:1px solid var(--line);border-radius:var(--r);background:var(--stock);color:var(--ink);align-self:flex-start;white-space:nowrap}
-.mk:hover{text-decoration:none;border-color:var(--ink-2)}
-.mk b{font-family:var(--num);font-weight:700;font-size:25px;line-height:1;letter-spacing:.005em}
-.mk span{font-size:13.5px;color:var(--ink-2);font-weight:500}
+.mk{display:inline-flex;align-items:center;gap:8px;color:var(--ink);align-self:flex-start;margin:2px 0}
+.mk:hover{text-decoration:none}.mk:hover span{text-decoration:underline}
+.mk b{font-family:var(--num);font-weight:700;font-size:46px;line-height:.9;letter-spacing:-.01em}
+.mk span{font-size:14px;color:var(--ink-2);font-weight:600;line-height:1.2;max-width:92px}
+.mk .g-mat,.mk .g-form{align-self:center}
 .mk.mat b{color:var(--sea-ink)}.mk.form b{color:var(--gel-ink)}
-.mk.mat{border-color:#bcd0e8;background:var(--sea-wash)}
-.mk.form{border-color:#efcfb4;background:var(--gel-wash)}
 .slots{position:absolute;display:grid;gap:8px 6px}
 .slots i{display:block;height:22px;border:1px dashed var(--seam);background:rgba(255,255,255,.6)}
 .dots{display:grid;gap:5px;margin:2px 0 4px 2px}
@@ -93,18 +92,18 @@ def dots(kind, n, alert_idx=None, cols=10):
 def screen1():
     mapx = f"""
 <div class="map">
-  <div class="bld" style="left:18px;top:20px;width:196px;height:262px"><span class="bn">Magazyn</span>
-    {zone("left:9px;top:30px;right:9px;bottom:9px", "Magazyn główny", mk("mat", 52, "partie materiału", "04-historia-partii.html") + dots("mat", 52, cols=8), cls="w")}
+  <div class="bld" style="left:18px;top:20px;width:196px;height:262px">
+    {zone("left:9px;top:9px;right:9px;bottom:9px", "Magazyn główny", mk("mat", 52, "partie materiału", "04-historia-partii.html") + dots("mat", 52, cols=8), cls="w")}
   </div>
-  <div class="bld" style="left:18px;top:300px;width:196px;height:246px"><span class="bn">Hala 1</span>
-    {zone("left:9px;top:30px;right:9px;bottom:9px", "Hala 1 – strefa A", mk("mat", 9, "partii materiału", "04-historia-partii.html") + dots("mat", 9, 3, cols=8) + mk("form", 2, "formy", "06-paszport-formy.html") + dots("form", 2, cols=8), alert=True)}
+  <div class="bld" style="left:18px;top:300px;width:196px;height:246px">
+    {zone("left:9px;top:9px;right:9px;bottom:9px", "Hala 1 – strefa A", mk("mat", 9, "partii materiału", "04-historia-partii.html") + dots("mat", 9, 3, cols=8) + mk("form", 2, "formy", "06-paszport-formy.html") + dots("form", 2, cols=8), alert=True)}
   </div>
   <div class="bld" style="left:232px;top:20px;width:280px;height:526px"><span class="bn">Hala 2</span>
-    {zone("left:9px;top:30px;right:9px;height:236px", "Hala 2 – strefa B", mk("mat", 14, "partii materiału", "04-historia-partii.html") + dots("mat", 14, 6, cols=7), alert=True)}
+    {zone("left:9px;top:16px;right:9px;height:250px", "Hala 2 – strefa B", mk("mat", 14, "partii materiału", "04-historia-partii.html") + dots("mat", 14, 6, cols=7), alert=True)}
     {zone("left:9px;top:276px;right:9px;bottom:9px", "Hala 2 – strefa D", mk("form", 4, "formy", "06-paszport-formy.html") + dots("form", 4, 0, cols=7), alert=True)}
   </div>
-  <div class="yard" style="left:530px;top:20px;right:18px;height:526px"><span class="bn">Plac form</span>
-    {zone("left:9px;top:30px;right:9px;height:236px", "Plac form – rząd C", mk("form", 16, "form", "06-paszport-formy.html") + dots("form", 16, 15, cols=8), alert=True)}
+  <div class="yard" style="left:530px;top:20px;right:18px;height:526px">
+    {zone("left:9px;top:9px;right:9px;height:257px", "Plac form – rząd C", mk("form", 16, "form", "06-paszport-formy.html") + dots("form", 16, 15, cols=8), alert=True)}
     <div class="slots" style="left:14px;right:14px;top:290px;grid-template-columns:repeat(6,1fr)">{"<i></i>" * 30}</div>
   </div>
 </div>"""
@@ -181,7 +180,7 @@ def bars(rows, top_first=True):
     mx = max(v for _, v in rows)
     out = []
     for i, (n, v) in enumerate(rows):
-        cls = " mx" if (i == 0 and top_first) else ""
+        cls = ""
         out.append(f'<div class="br{cls}"><span class="n">{n}</span><span class="t"><i style="width:{v/mx*100:.1f}%"></i></span><span class="v">{v}</span></div>')
     return '<div class="bars">' + "".join(out) + "</div>"
 
@@ -226,16 +225,16 @@ CSS4 = """
 .meta{display:flex;gap:8px;margin-top:8px}
 .sum{display:flex;align-items:center;gap:22px;background:var(--stock);border:1px solid var(--line);padding:14px 18px;margin-bottom:20px}
 .chips{display:flex;gap:8px}
-.chip{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:17px;font-weight:600;font-size:14.5px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:4px;font-weight:600;font-size:14.5px}
 .chip b{font-family:var(--num);font-size:19px}
 .chip.u{background:var(--sea-wash);color:var(--sea-ink)}
 .chip.w{background:var(--alert-wash);color:var(--alert-ink)}
-.chip.o{background:var(--warn-wash);color:var(--warn)}
+.chip.o{background:var(--stock);color:var(--sail);border:1.5px dashed var(--sail)}
 .sheets{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mute)}
 .sheets .row{display:grid;grid-template-columns:repeat(12,22px);gap:3px}
 .sheets i{height:30px;border-radius:2px;display:block}
 .sheets i.u{background:var(--sea)}.sheets i.w{background:var(--alert)}
-.sheets i.o{background:repeating-linear-gradient(135deg,var(--warn) 0 3px,#f1d199 3px 6px)}
+.sheets i.o{background:repeating-linear-gradient(135deg,var(--sail) 0 3px,#b9c6da 3px 6px)}
 .grid4{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start}
 .tl{padding:8px 22px 10px}
 .ev{display:grid;grid-template-columns:118px 36px 1fr;gap:0 14px;position:relative}
@@ -253,10 +252,10 @@ CSS4 = """
 .kv{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px;font-size:14px;color:var(--ink-2)}
 .kv span{display:inline-flex;align-items:center;gap:6px}
 .kv em{font-style:normal;color:var(--mute)}
-.ev.x .nd{border-color:var(--warn);color:var(--warn);background:var(--warn-wash)}
+.ev.x .nd{border-color:var(--sail);color:var(--sail);background:var(--sail-wash)}
 .ev.x .bd{}
-.why{margin-top:10px;background:var(--warn-wash);border:1px solid var(--warn-line);padding:9px 12px;font-size:14px;color:var(--ink)}
-.why em{font-style:normal;color:var(--warn);font-weight:600}
+.why{margin-top:10px;background:var(--sail-wash);border:1px solid #c3cee0;padding:9px 12px;font-size:14px;color:var(--ink)}
+.why em{font-style:normal;color:var(--sail);font-weight:600}
 .ev.end .nd{border-color:var(--ok);color:#fff;background:var(--ok)}
 .src{font-size:12px;font-weight:600;color:var(--mute);border:1px solid var(--line);border-radius:4px;padding:1px 6px}
 .side{display:flex;flex-direction:column;gap:20px}
@@ -281,7 +280,7 @@ def screen4():
          '<span><em>skan QR strefy:</em> Hala 2 – strefa B</span><span>Marek Wójcik</span>'),
         ("", "play", "04.11.2026", "06:50", "Rozpoczęcie etapu",
          f'<span>Stolarnia</span><span><em>skan QR jednostki:</em> {hull(S80,"08")}</span><span>Marek Wójcik</span>'),
-        ("x", "swap", "06.11.2026", "13:20", 'Użycie na innej jednostce <span class="badge warn">4 ark.</span>',
+        ("x", "swap", "06.11.2026", "13:20", 'Użycie na innej jednostce <span class="badge" style="background:var(--sail-wash);color:var(--sail)">4 ark.</span>',
          f'<span>{hull(S60,"03")}</span><span>Stolarnia</span><span>Tomasz Kowal</span>'
          '</div><div class="why"><em>uzasadnienie:</em> „Pilna potrzeba, uzupełnienie z kolejnej dostawy”'),
         ("end", "check", "10.11.2026", "14:05", "Zakończenie etapu",
@@ -335,8 +334,8 @@ CSS6 = """
 .st .lb svg{width:15px;height:15px}
 .st .v{font-size:19px;font-weight:700;margin-top:6px;line-height:1.3}
 .st .v small{display:block;font-size:13.5px;font-weight:500;color:var(--mute);margin-top:3px}
-.st.warn{background:var(--warn-wash)}
-.st.warn .bigd{display:inline-flex;align-items:center;gap:8px;margin-top:6px;height:34px;padding:0 12px;border-radius:17px;background:#fff;border:1.5px solid var(--warn);color:var(--warn);font-weight:700;font-size:15.5px}
+.st.warn{background:var(--alert-wash)}
+.st.warn .bigd{display:inline-flex;align-items:center;gap:8px;margin-top:6px;height:34px;padding:0 12px;border-radius:var(--r);background:#fff;border:1.5px solid var(--alert);color:var(--alert-ink);font-weight:700;font-size:15.5px}
 .st.warn .bigd svg{width:18px;height:18px}
 table{width:100%;border-collapse:collapse}
 th{font-size:12.5px;font-weight:600;color:var(--mute);text-align:left;padding:10px 18px;background:var(--wash);border-bottom:1px solid var(--line);white-space:nowrap}
@@ -370,7 +369,7 @@ def screen6():
 <div class="status">
   <div class="st"><div class="lb">{ic("scan")}Lokalizacja</div><div class="v">Hala 2 – strefa D<small>według ostatniego skanu, 19.11.2026</small></div></div>
   <div class="st"><div class="lb">{ic("play")}Ostatnie użycie</div><div class="v">18.09.2026</div></div>
-  <div class="st warn"><div class="lb" style="color:var(--warn)">{ic("clock")}Bez użycia</div><span class="bigd">{ic("straty")}Nieużywana od 63 dni</span></div>
+  <div class="st warn"><div class="lb" style="color:var(--alert-ink)">{ic("clock")}Bez użycia</div><span class="bigd">{ic("straty")}Nieużywana od 63 dni</span></div>
   <div class="st"><div class="lb">{ic("wrench")}Ostatni remont</div><div class="v">14.07.2026</div></div>
 </div>
 <section class="panel">
