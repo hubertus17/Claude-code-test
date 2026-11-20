@@ -1,0 +1,704 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T15:30:00Z",
+  "title": "Design System: Sunreef · Materiał i formy",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Sailcloth",
+        "canonical": "#f3f5f6",
+        "oklch": "oklch(96.9% 0.003 228.8)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#232425",
+          "#3f4040",
+          "#5c5e5f",
+          "#7f8081",
+          "#a3a5a5",
+          "#c9cbcb",
+          "#eeeeef"
+        ]
+      },
+      "stock": {
+        "role": "neutral",
+        "displayName": "Stock White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Wash",
+        "canonical": "#f6f8f9",
+        "oklch": "oklch(97.8% 0.003 228.8)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#232425",
+          "#3f4040",
+          "#5c5e5f",
+          "#7f8081",
+          "#a3a5a5",
+          "#c9cbcb",
+          "#eeeeef"
+        ]
+      },
+      "rail": {
+        "role": "primary",
+        "displayName": "Carbon Laminate",
+        "canonical": "#1a2026",
+        "oklch": "oklch(24.0% 0.015 248.4)",
+        "tonalRamp": [
+          "#090b0e",
+          "#212428",
+          "#3b4045",
+          "#585e65",
+          "#7a8188",
+          "#9fa5ab",
+          "#c6cbd0",
+          "#ebeff3"
+        ]
+      },
+      "rail-2": {
+        "role": "primary",
+        "displayName": "Rail 2",
+        "canonical": "#232b32",
+        "oklch": "oklch(28.4% 0.017 244.9)",
+        "tonalRamp": [
+          "#090c0e",
+          "#202529",
+          "#3a4146",
+          "#575f66",
+          "#798189",
+          "#9ea6ac",
+          "#c5cbd1",
+          "#eaeff3"
+        ]
+      },
+      "rail-3": {
+        "role": "primary",
+        "displayName": "Rail 3",
+        "canonical": "#2e3841",
+        "oklch": "oklch(33.5% 0.021 245.6)",
+        "tonalRamp": [
+          "#080c0f",
+          "#1f252a",
+          "#394148",
+          "#555f68",
+          "#77828b",
+          "#9da6ae",
+          "#c4ccd2",
+          "#e9eff5"
+        ]
+      },
+      "rail-ink": {
+        "role": "neutral",
+        "displayName": "Rail Ink",
+        "canonical": "#c3ccd3",
+        "oklch": "oklch(84.0% 0.014 241.0)",
+        "tonalRamp": [
+          "#090c0e",
+          "#212528",
+          "#3b4145",
+          "#585f64",
+          "#7a8187",
+          "#9fa6ab",
+          "#c6cbd0",
+          "#ebeff2"
+        ]
+      },
+      "rail-mute": {
+        "role": "neutral",
+        "displayName": "Rail Mute",
+        "canonical": "#8794a0",
+        "oklch": "oklch(66.0% 0.023 246.0)",
+        "tonalRamp": [
+          "#080c0f",
+          "#1f252b",
+          "#384149",
+          "#545f69",
+          "#76828d",
+          "#9ca6af",
+          "#c3ccd3",
+          "#e9eff5"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#12181d",
+        "oklch": "oklch(20.5% 0.014 243.6)",
+        "tonalRamp": [
+          "#090b0e",
+          "#212528",
+          "#3b4045",
+          "#585f64",
+          "#7a8187",
+          "#9fa5ab",
+          "#c6cbcf",
+          "#ebeff2"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#36414b",
+        "oklch": "oklch(36.9% 0.023 245.9)",
+        "tonalRamp": [
+          "#080c0f",
+          "#1f252a",
+          "#394148",
+          "#545f69",
+          "#76828c",
+          "#9ca6af",
+          "#c4ccd3",
+          "#e9eff5"
+        ]
+      },
+      "mute": {
+        "role": "neutral",
+        "displayName": "Mute",
+        "canonical": "#5c6873",
+        "oklch": "oklch(51.1% 0.023 245.9)",
+        "tonalRamp": [
+          "#080c0f",
+          "#1f252a",
+          "#384148",
+          "#545f69",
+          "#76828c",
+          "#9ca6af",
+          "#c3ccd3",
+          "#e9eff5"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#d3d9de",
+        "oklch": "oklch(88.2% 0.009 242.9)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#222427",
+          "#3d4043",
+          "#5a5e62",
+          "#7c8185",
+          "#a1a5a9",
+          "#c7cbce",
+          "#eceff1"
+        ]
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Line 2",
+        "canonical": "#e5e9ec",
+        "oklch": "oklch(93.2% 0.006 239.8)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#222426",
+          "#3e4042",
+          "#5b5e60",
+          "#7d8183",
+          "#a2a5a7",
+          "#c8cbcd",
+          "#edeff0"
+        ]
+      },
+      "seam": {
+        "role": "neutral",
+        "displayName": "Seam",
+        "canonical": "#c4ccd2",
+        "oklch": "oklch(84.1% 0.012 239.9)",
+        "tonalRamp": [
+          "#090b0d",
+          "#212527",
+          "#3c4044",
+          "#585f63",
+          "#7a8186",
+          "#a0a5aa",
+          "#c6cbcf",
+          "#ebeff2"
+        ]
+      },
+      "sail": {
+        "role": "primary",
+        "displayName": "Sail Navy",
+        "canonical": "#13315c",
+        "oklch": "oklch(31.6% 0.085 257.8)",
+        "tonalRamp": [
+          "#030b1b",
+          "#14243d",
+          "#2a4061",
+          "#425e89",
+          "#6282af",
+          "#8ba6ce",
+          "#b6cced",
+          "#dff0ff"
+        ]
+      },
+      "sail-wash": {
+        "role": "primary",
+        "displayName": "Sail Wash",
+        "canonical": "#e4e9f1",
+        "oklch": "oklch(93.3% 0.012 259.8)",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#222428",
+          "#3d4045",
+          "#5a5e64",
+          "#7c8087",
+          "#a1a5ab",
+          "#c8cbcf",
+          "#eceff2"
+        ]
+      },
+      "sea": {
+        "role": "secondary",
+        "displayName": "Sea Blue",
+        "canonical": "#1f62b0",
+        "oklch": "oklch(49.8% 0.141 255.1)",
+        "tonalRamp": [
+          "#000925",
+          "#00234c",
+          "#103f76",
+          "#235ea3",
+          "#4682cc",
+          "#76a7e7",
+          "#a5ceff",
+          "#d2f1ff"
+        ]
+      },
+      "sea-ink": {
+        "role": "secondary",
+        "displayName": "Sea Ink",
+        "canonical": "#174c8a",
+        "oklch": "oklch(41.7% 0.117 255.1)",
+        "tonalRamp": [
+          "#000a21",
+          "#082445",
+          "#1c406d",
+          "#315f98",
+          "#5182c0",
+          "#7ea7dc",
+          "#accdf9",
+          "#d7f1ff"
+        ]
+      },
+      "sea-wash": {
+        "role": "secondary",
+        "displayName": "Sea Wash",
+        "canonical": "#e6eef8",
+        "oklch": "oklch(94.6% 0.016 253.9)",
+        "tonalRamp": [
+          "#090b0e",
+          "#212429",
+          "#3b4046",
+          "#585e66",
+          "#7a8189",
+          "#9fa5ac",
+          "#c6cbd1",
+          "#ebeff3"
+        ]
+      },
+      "gel": {
+        "role": "secondary",
+        "displayName": "Tooling Gelcoat",
+        "canonical": "#c75f0e",
+        "oklch": "oklch(60.2% 0.155 50.0)",
+        "tonalRamp": [
+          "#200000",
+          "#450f00",
+          "#6d2600",
+          "#993f00",
+          "#c2621f",
+          "#e08d5e",
+          "#fdb994",
+          "#ffe2c5"
+        ]
+      },
+      "gel-ink": {
+        "role": "secondary",
+        "displayName": "Gelcoat Ink",
+        "canonical": "#9c4a0a",
+        "oklch": "oklch(50.5% 0.128 50.4)",
+        "tonalRamp": [
+          "#1d0200",
+          "#401500",
+          "#662d01",
+          "#8f4613",
+          "#b86938",
+          "#d6926b",
+          "#f5bd9d",
+          "#ffe4cc"
+        ]
+      },
+      "gel-wash": {
+        "role": "secondary",
+        "displayName": "Gelcoat Wash",
+        "canonical": "#fbede1",
+        "oklch": "oklch(95.4% 0.022 63.2)",
+        "tonalRamp": [
+          "#0e0a07",
+          "#29231d",
+          "#463e37",
+          "#665b52",
+          "#897e74",
+          "#ada39a",
+          "#d1c9c2",
+          "#f4ede8"
+        ]
+      },
+      "alert": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "#c4282b",
+        "oklch": "oklch(53.5% 0.192 25.8)",
+        "tonalRamp": [
+          "#250000",
+          "#4e0001",
+          "#7a0810",
+          "#aa2023",
+          "#d64844",
+          "#f37c73",
+          "#ffada3",
+          "#ffd9d0"
+        ]
+      },
+      "alert-ink": {
+        "role": "tertiary",
+        "displayName": "Signal Red Ink",
+        "canonical": "#a11f22",
+        "oklch": "oklch(46.3% 0.165 25.7)",
+        "tonalRamp": [
+          "#220000",
+          "#490407",
+          "#741919",
+          "#a1302e",
+          "#cc544e",
+          "#e9837b",
+          "#ffb1a9",
+          "#ffdcd5"
+        ]
+      },
+      "alert-wash": {
+        "role": "tertiary",
+        "displayName": "Signal Red Wash",
+        "canonical": "#fbe7e6",
+        "oklch": "oklch(94.4% 0.022 21.0)",
+        "tonalRamp": [
+          "#0f0a09",
+          "#2a2221",
+          "#483c3c",
+          "#695959",
+          "#8c7c7b",
+          "#afa1a0",
+          "#d3c7c7",
+          "#f5eceb"
+        ]
+      },
+      "warn": {
+        "role": "tertiary",
+        "displayName": "Amber",
+        "canonical": "#8f5a00",
+        "oklch": "oklch(51.4% 0.111 70.3)",
+        "tonalRamp": [
+          "#180600",
+          "#381d00",
+          "#5b3600",
+          "#815208",
+          "#a77433",
+          "#c79b68",
+          "#e7c49b",
+          "#ffe9cb"
+        ]
+      },
+      "warn-wash": {
+        "role": "tertiary",
+        "displayName": "Amber Wash",
+        "canonical": "#fcf0d9",
+        "oklch": "oklch(95.9% 0.033 83.7)",
+        "tonalRamp": [
+          "#0e0b05",
+          "#292319",
+          "#463f31",
+          "#665c4b",
+          "#897f6c",
+          "#aca493",
+          "#d1cabc",
+          "#f3eee3"
+        ]
+      },
+      "ok": {
+        "role": "tertiary",
+        "displayName": "Hull Green",
+        "canonical": "#1d7448",
+        "oklch": "oklch(49.7% 0.107 156.3)",
+        "tonalRamp": [
+          "#001104",
+          "#002d16",
+          "#0e4c2d",
+          "#236e46",
+          "#489267",
+          "#79b48f",
+          "#a9d8b9",
+          "#d5f9e1"
+        ]
+      },
+      "ok-wash": {
+        "role": "tertiary",
+        "displayName": "Hull Green Wash",
+        "canonical": "#e2f1e8",
+        "oklch": "oklch(94.4% 0.020 159.7)",
+        "tonalRamp": [
+          "#080c0a",
+          "#1f2622",
+          "#39423d",
+          "#55615a",
+          "#77847c",
+          "#9da8a1",
+          "#c4cdc8",
+          "#eaf0ec"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Desktop page title, one per screen."
+      },
+      "headline-mobile": {
+        "displayName": "Headline Mobile",
+        "purpose": "Title inside the mobile carbon bar."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel headers."
+      },
+      "item-title": {
+        "displayName": "Item Title",
+        "purpose": "List and timeline item headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text, tabular numerals on."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, stat labels, table headers."
+      },
+      "figure-display": {
+        "displayName": "Figure Display",
+        "purpose": "Zone counts on the site plan; 54px in report tiles."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Stepper values, progress counts; 19-20px in chips, bars, balances."
+      },
+      "sail-number": {
+        "displayName": "Sail Number",
+        "purpose": "Numerals inside the hull sail-number badge."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "SUNREEF wordmark in the rail."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Batch, mould and document codes printed on labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "toast-lift",
+        "value": "0 10px 30px -8px rgba(18,24,29,.45)",
+        "purpose": "Save confirmation toast on mobile."
+      },
+      {
+        "name": "sheet-lift",
+        "value": "0 -12px 30px -10px rgba(0,0,0,.4)",
+        "purpose": "Bottom sheet over a 55% ink scrim."
+      },
+      {
+        "name": "segment-lift",
+        "value": "0 1px 3px rgba(0,0,0,.2)",
+        "purpose": "Active option in a segmented control."
+      },
+      {
+        "name": "halo-ring",
+        "value": "0 0 0 3px #ffffff",
+        "purpose": "Separates zone alert discs from the plan."
+      },
+      {
+        "name": "flag-ring",
+        "value": "0 0 0 2px #ffffff, 0 0 0 4px #c4282b",
+        "purpose": "Outlines a flagged unit glyph on the plan."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "390px"
+      },
+      {
+        "name": "desktop",
+        "value": "1440px"
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid #1f62b0; outline-offset: 2px",
+      "purpose": "Every focusable element."
+    },
+    "scrim": {
+      "value": "rgba(18,24,29,.55)",
+      "purpose": "Behind the mobile bottom sheet."
+    }
+  },
+  "components": [
+    {
+      "name": "Hull Sail-Number Badge",
+      "kind": "custom",
+      "refersTo": "sail-number",
+      "description": "Signature: every hull reference leads with its sail number, then 'Model · jednostka NN'.",
+      "html": "<span class=\"ds-hull\"><span class=\"ds-sn\" aria-hidden=\"true\">08</span><span>Sunreef 80 Electric · jednostka 08</span></span> <span class=\"ds-sn ds-sn-lg\" aria-hidden=\"true\">03</span>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px} .ds-hull{display:inline-flex;align-items:center;gap:7px;font-family:var(--ui);font-size:15px;color:var(--ink);white-space:nowrap} .ds-sn{display:inline-grid;place-items:center;min-width:26px;height:22px;padding:0 4px;border:1.5px solid var(--sail);border-radius:3px;font-family:var(--num);font-weight:700;font-size:16px;line-height:1;color:var(--sail);letter-spacing:.01em;background:var(--stock)} .ds-sn-lg{min-width:38px;height:32px;font-size:24px;border-width:2px}"
+    },
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Default desktop action: stock fill, hairline border.",
+      "html": "<button class=\"ds-btn\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5\"/><path d=\"M12 15V3\"/></svg>Eksport PDF</button>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px} :focus-visible{outline:2px solid var(--sea);outline-offset:2px} .ds-btn{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:var(--r);border:1px solid var(--line);background:var(--stock);font-family:var(--ui);font-weight:600;font-size:14px;color:var(--ink);cursor:pointer} .ds-btn:hover{border-color:var(--mute)}"
+    },
+    {
+      "name": "Button Dark",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Carbon primary action on desktop.",
+      "html": "<button class=\"ds-btn-dark\">Zapisz zmiany</button>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px} :focus-visible{outline:2px solid var(--sea);outline-offset:2px} .ds-btn-dark{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:var(--r);border:1px solid var(--rail);background:var(--rail);font-family:var(--ui);font-weight:600;font-size:14px;color:#fff;cursor:pointer} .ds-btn-dark:hover{background:#000}"
+    },
+    {
+      "name": "Mobile Primary Slab",
+      "kind": "button",
+      "refersTo": "bigbtn",
+      "description": "Full-width 58px carbon slab for the one action on a phone screen; ghost and red variants.",
+      "html": "<div style=\"width:358px;display:flex;flex-direction:column;gap:10px\"><button class=\"ds-big\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Potwierdź odbiór</button><button class=\"ds-big ds-big-ghost\">Zakończ inwentaryzację</button><button class=\"ds-big ds-big-red\">Wyślij zgłoszenie</button></div>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px} :focus-visible{outline:2px solid var(--sea);outline-offset:2px} .ds-big{height:58px;border-radius:var(--r);background:var(--rail);color:#fff;border:0;font-family:var(--ui);font-weight:700;font-size:17.5px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;cursor:pointer} .ds-big:active{background:#000} .ds-big-ghost{background:var(--stock);color:var(--ink);border:1.5px solid var(--ink)} .ds-big-red{background:var(--alert)}"
+    },
+    {
+      "name": "Filter Select",
+      "kind": "input",
+      "refersTo": "select",
+      "description": "Desktop filter row control: 'Label: value' with a chevron.",
+      "html": "<button class=\"ds-sel\">Projekt: <b>wszystkie</b><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5c6873\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"/></svg></button>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px} :focus-visible{outline:2px solid var(--sea);outline-offset:2px} .ds-sel{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 10px 0 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--stock);font-family:var(--ui);font-size:14px;color:var(--ink-2);cursor:pointer} .ds-sel b{font-weight:600;color:var(--ink)} .ds-sel:hover{border-color:var(--mute)}"
+    },
+    {
+      "name": "Mobile Field",
+      "kind": "input",
+      "refersTo": "field-mobile",
+      "description": "52px glove-sized field with label, leading icon and chevron.",
+      "html": "<div class=\"ds-fld\"><label>Gdzie</label><div class=\"ds-inp\" tabindex=\"0\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5c6873\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z\"/><circle cx=\"12\" cy=\"10\" r=\"2.5\"/></svg><span>Hala 2 – strefa B</span><span class=\"ds-chev\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5c6873\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"/></svg></span></div></div>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px}  .ds-fld{display:flex;flex-direction:column;gap:6px;width:358px;font-family:var(--ui)} .ds-fld label{font-size:13px;font-weight:600;color:var(--mute);letter-spacing:.01em} .ds-inp{min-height:52px;background:var(--stock);border:1px solid var(--line);border-radius:var(--r);display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:16px;font-weight:500;color:var(--ink)} .ds-inp:focus-visible{outline:2px solid var(--sea);outline-offset:2px} .ds-chev{margin-left:auto;display:flex}"
+    },
+    {
+      "name": "Status Badges",
+      "kind": "chip",
+      "refersTo": "badge-alert",
+      "description": "Wash Pairing badges: each colour keeps its job.",
+      "html": "<div style=\"display:flex;gap:8px;flex-wrap:wrap\"><span class=\"ds-badge ds-alert\">Strata</span><span class=\"ds-badge ds-ok\">Dostawa</span><span class=\"ds-badge ds-warn\">Nieoczekiwana</span><span class=\"ds-badge ds-sea\">Materiał</span><span class=\"ds-badge ds-gel\">Forma</span><span class=\"ds-tag\"><span class=\"ds-mono\">QR M-24817</span></span></div>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px}  .ds-badge{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 8px;border-radius:4px;font-family:var(--ui);font-size:12.5px;font-weight:600;white-space:nowrap} .ds-alert{background:var(--alert-wash);color:var(--alert-ink)} .ds-ok{background:var(--ok-wash);color:var(--ok)} .ds-warn{background:var(--warn-wash);color:var(--warn)} .ds-sea{background:var(--sea-wash);color:var(--sea-ink)} .ds-gel{background:var(--gel-wash);color:var(--gel-ink)} .ds-tag{display:inline-flex;align-items:center;min-height:26px;padding:3px 9px;border:1px solid var(--line);border-radius:4px;font-family:var(--ui);font-size:13px;color:var(--ink-2);background:var(--stock)} .ds-mono{font-family:var(--mono);font-size:.86em;font-weight:500;letter-spacing:.01em}"
+    },
+    {
+      "name": "Carbon Rail Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Desktop side rail: wordmark, items, inverted active slab, red alert pill.",
+      "html": "<nav class=\"ds-rail\"><div class=\"ds-brand\"><span class=\"ds-wm\">SUNREEF</span><span class=\"ds-sub\">Materiał i formy · produkcja</span></div><a href=\"#\" class=\"ds-on\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"5\" rx=\"1\"/><rect x=\"14\" y=\"12\" width=\"7\" height=\"9\" rx=\"1\"/><rect x=\"3\" y=\"16\" width=\"7\" height=\"5\" rx=\"1\"/></svg><span>Pulpit</span></a><a href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9.5\"/><path d=\"M12 7v5l3.5 2\"/></svg><span>Raporty</span></a><a href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"/><path d=\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"/></svg><span>Alerty</span><span class=\"ds-ct\">4</span></a></nav>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px}  .ds-rail{width:236px;background:var(--rail);padding:18px 14px;display:flex;flex-direction:column;gap:4px;font-family:var(--ui)} .ds-brand{display:flex;flex-direction:column;padding:4px 10px 22px;border-bottom:1px solid var(--rail-3);margin-bottom:14px} .ds-wm{font-family:var(--num);font-weight:700;font-size:22px;letter-spacing:.16em;color:#fff;line-height:1} .ds-sub{font-size:12.5px;color:var(--rail-mute);margin-top:5px} .ds-rail a{display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--r);color:var(--rail-ink);font-weight:500;font-size:14.5px;text-decoration:none} .ds-rail a svg{color:var(--rail-mute)} .ds-rail a:hover{background:var(--rail-2);color:#fff} .ds-rail a:focus-visible{outline:2px solid var(--sea);outline-offset:2px} .ds-rail a.ds-on{background:#fff;color:var(--rail)} .ds-rail a.ds-on svg{color:var(--rail)} .ds-ct{margin-left:auto;font-family:var(--num);font-weight:700;font-size:14px;background:var(--alert);color:#fff;border-radius:9px;min-width:20px;height:18px;display:grid;place-items:center;padding:0 5px}"
+    },
+    {
+      "name": "Panel with Reaction Item",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Square stock panel, hairline header, item with job-coloured icon well and history link.",
+      "html": "<section class=\"ds-panel\"><div class=\"ds-ph\"><h2>Wymaga reakcji</h2></div><div class=\"ds-ri\"><span class=\"ds-ico\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9.5\"/><path d=\"M12 7v5l3.5 2\"/></svg></span><div><h3>Materiał bez ruchu 14 dni</h3><p>Fornir teakowy · partia <span class=\"ds-mono\">M-23990</span> · Hala 1 – strefa A</p><a class=\"ds-hl\" href=\"#\">Pokaż historię</a></div></div></section>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px}  .ds-panel{width:372px;background:var(--stock);border:1px solid var(--line);font-family:var(--ui);color:var(--ink)} .ds-ph{display:flex;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line-2)} .ds-ph h2{font-size:17px;font-weight:700;margin:0} .ds-ri{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 18px} .ds-ico{width:34px;height:34px;border-radius:var(--r);display:grid;place-items:center;background:var(--sea-wash);color:var(--sea-ink)} .ds-ri h3{font-size:15px;font-weight:700;line-height:1.3;margin:0} .ds-ri p{font-size:14px;color:var(--ink-2);margin:3px 0 0;line-height:1.45} .ds-mono{font-family:var(--mono);font-size:.86em;font-weight:500} .ds-hl{display:inline-flex;margin-top:6px;font-weight:600;font-size:14px;color:var(--sea-ink);text-decoration:none} .ds-hl:hover{text-decoration:underline} .ds-hl:focus-visible{outline:2px solid var(--sea);outline-offset:2px}"
+    },
+    {
+      "name": "Zone Count Marker",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Site-plan zone: material square / mould diamond glyph with a Condensed 46px figure and alert disc.",
+      "html": "<div class=\"ds-zone\"><div class=\"ds-zn\">Hala 2 – strefa B</div><span class=\"ds-za\">1</span><a class=\"ds-mk\" href=\"#\"><i class=\"ds-gm\"></i><b>14</b><span>partii materiału</span></a><a class=\"ds-mk ds-form\" href=\"#\"><i class=\"ds-gf\"></i><b>4</b><span>formy</span></a></div>",
+      "css": ":host{--ground:#f3f5f6;--stock:#fff;--wash:#f6f8f9;--rail:#1a2026;--rail-2:#232b32;--rail-3:#2e3841;--rail-ink:#c3ccd3;--rail-mute:#8794a0;--ink:#12181d;--ink-2:#36414b;--mute:#5c6873;--line:#d3d9de;--line-2:#e5e9ec;--seam:#c4ccd2;--sail:#13315c;--sea:#1f62b0;--sea-ink:#174c8a;--sea-wash:#e6eef8;--gel:#c75f0e;--gel-ink:#9c4a0a;--gel-wash:#fbede1;--alert:#c4282b;--alert-ink:#a11f22;--alert-wash:#fbe7e6;--warn:#8f5a00;--warn-wash:#fcf0d9;--ok:#1d7448;--ok-wash:#e2f1e8;--ui:'Barlow',system-ui,sans-serif;--num:'Barlow Condensed','Barlow',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--r:6px}  .ds-zone{position:relative;width:240px;border:1px solid var(--seam);background:var(--stock);padding:12px;display:flex;flex-direction:column;gap:8px;font-family:var(--ui)} .ds-zn{font-weight:700;font-size:14.5px;color:var(--ink)} .ds-za{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:var(--alert);color:#fff;display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:15px;box-shadow:0 0 0 3px var(--stock)} .ds-mk{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;align-self:flex-start} .ds-mk:hover span{text-decoration:underline} .ds-mk:focus-visible{outline:2px solid var(--sea);outline-offset:2px} .ds-mk b{font-family:var(--num);font-weight:700;font-size:46px;line-height:.9;color:var(--sea-ink)} .ds-form b{color:var(--gel-ink)} .ds-mk span{font-size:14px;color:var(--ink-2);font-weight:600;max-width:92px;line-height:1.2} .ds-gm{width:12px;height:12px;background:var(--sea);border-radius:2px} .ds-gf{width:11px;height:11px;background:var(--gel);transform:rotate(45deg);border-radius:1.5px;margin:0 1px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sail Loft",
+    "overview": "A sail loft is a working floor, not a showroom: cool white cloth laid flat under hard light, numbers stitched large enough to read from across the hall, every panel cut square and every seam a hairline. This system treats the shipyard's material and moulds the same way. The ground is cool sailcloth, the frame is carbon laminate, and the things that matter (which hull, how many, where it was last scanned) are set as sail-number figures in condensed bold. Everything else steps back into quiet grey.\n\nDensity is high but orderly, built for a production manager who reads a site plan in three seconds and a shop-floor worker who taps through a confirmation with gloves on. Desktop is a charcoal rail plus a white header over a sailcloth ground with square, hairline-bordered panels. Mobile flips the frame: the charcoal moves to the top bar and the primary action becomes a full-width 58px carbon slab. Colour is never decoration; every hue carries a job (material, mould, alert, ok, other hull), and those jobs hold on every screen.\n\nThe world explicitly refuses the grey SaaS dashboard with a single blue accent and a stock pin map. The site plan is a schematic drawn in the system's own materials (hairline grid, solid hall walls, dashed yard boundary), never a map tile.",
+    "keyCharacteristics": [
+      "Cool sailcloth ground, carbon-laminate rail, hairline seams.",
+      "Five colours with fixed jobs; tinted washes carry them in badges and icon wells.",
+      "Barlow for UI, Barlow Condensed bold for every count and sail number, JetBrains Mono for printed codes.",
+      "Square desktop panels; 6px controls; small squared badges.",
+      "The hull sail-number badge is the signature: every hull reference carries one.",
+      "Location language is always \"according to the last scan\", never live."
+    ],
+    "rules": [
+      {
+        "name": "The Colour Has a Job Rule",
+        "body": "Sea is material, gelcoat is mould, red is react, green is done, navy is a hull. A colour never appears outside its job, and a job never borrows another's colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Wash Pairing Rule",
+        "body": "A semantic colour on a light surface comes as a pair: its wash for the fill and its -ink step for the text or glyph. Full-strength colour is reserved for markers, counts, bars and solid action fills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sail Number Rule",
+        "body": "Every count that answers \"how many\" and every hull number is set in Barlow Condensed bold. Body Barlow never carries a headline quantity.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Code Rule",
+        "body": "Mono is only for strings that physically exist on a label or document (M-24817, F-021, RW 1184/11/2026). It is never used for UI chrome or decoration.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Loft Rule",
+        "body": "Panels, cards, tables and buttons never cast shadows. If a surface is not floating over other content, it has no shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do attach the sail-number badge to every hull reference, followed by the exact text \"Model · jednostka NN\".",
+      "Do set every headline count and hull number in Barlow Condensed 700.",
+      "Do keep each semantic colour to its job: sea for material, gelcoat for moulds, red for react, green for done, navy for hulls.",
+      "Do pair semantic colour with its wash and -ink step on light surfaces.",
+      "Do mark material with a square and moulds with a diamond wherever both appear together.",
+      "Do phrase every location as \"according to the last scan\" and show the scan time.",
+      "Do use JetBrains Mono for codes printed on labels and documents.",
+      "Do keep desktop panels square with a 1px Line border, and controls at 6px."
+    ],
+    "donts": [
+      "Don't build the grey SaaS dashboard with one blue accent, or drop in a stock pin map; the plan is a drawn schematic.",
+      "Don't put shadows on panels, cards, tables or buttons.",
+      "Don't use a semantic colour as decoration or swap colours between material and moulds.",
+      "Don't use mono for labels, headings or UI chrome.",
+      "Don't imply live tracking or GPS position anywhere in the UI.",
+      "Don't set a headline quantity in regular Barlow body weight."
+    ]
+  }
+}
