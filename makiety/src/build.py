@@ -582,7 +582,7 @@ def handlowiec_oferta():
       <table class="tbl"><thead><tr><th>Sprzedawca / faktura</th><th class="r">Kwota</th><th class="r">Zwłoka</th></tr></thead><tbody>{od}</tbody></table>
       <div class="rem">{ic("bell","s")}<span>Przypomnienia: 7 dni przed, 3 dni przed i w dniu płatności · opiekun w kopii</span></div></section>
     <section class="panel"><div class="panel-h"><h2>Rozliczenie prowizji lecznicy</h2></div>
-      <div class="com"><div class="row"><span>Naliczona</span><b>{zl(4286.40)}</b></div><div class="row"><span>Rozliczona</span><b>{zl(3118.20)}</b></div><div class="row"><span><b style="font-size:15px">Do rozliczenia</b></span><b style="color:var(--sig-ink)">{zl(1168.20)}</b></div></div></section>
+      <div class="com"><div class="row"><span>Naliczona</span><b>{zl(4286.40)}</b></div><div class="row"><span>Rozliczona</span><b>{zl(3118.20)}</b></div><div class="row"><span><b style="font-size:15px">Do rozliczenia</b></span><b style="color:var(--navy)">{zl(1168.20)}</b></div></div></section>
   </aside>
   </div>
 </main></div>'''
@@ -719,7 +719,26 @@ PAGES = {
     "A7-strefa-lecznicy.html": strefa,
 }
 
+
+B_MAP = [("assets/vetspot.css", "assets/vetspot-b.css"), ("vetspot-logo-white.svg", "vetspot-logo-teal.svg"),
+         ('src="assets/vetspot-logo.svg"', 'src="assets/vetspot-logo-teal.svg"'),
+         ("#0f6e74", "#0d9488"), ("#5b3f9e", "#7c3aed"), ("#a8640f", "#2563eb"),
+         ("#9fc0e3", "#99f6e4"), ("#123a63", "#0f766e"), ("#4f6b8a", "#3f6a66"), ("#1c4a7a", "#0f766e"),
+         ("#3a4450", "#285e5a"), ("#14181d", "#134e4a"), ("#5b6673", "#4b5d6b"), ("#e3e8ee", "#dcf3ee"),
+         ("#9aa7b4", "#8fbfb8"), ("#e4e9ef", "#e6f4f1"), ("#e6eef8", "#ccfbf1"), ("#eef3f9", "#f0fdfa"),
+         ("font:11.5px Archivo", "font:12px 'Nunito Sans'"), ("font-family:Archivo", "font-family:'Nunito Sans'"),
+         ("font-family:Archivo", "font-family:'Nunito Sans'"), ("font-family:var(--mono);font-weight:700;letter-spacing:0", "font-family:'Varela Round'")]
+
+
+def to_b(html):
+    for a, b in B_MAP:
+        html = html.replace(a, b)
+    return html
+
 if __name__ == "__main__":
     for name, fn in PAGES.items():
-        (OUT / name).write_text(fn(), encoding="utf-8")
-        print("zapisano", name)
+        html = fn()
+        (OUT / name).write_text(html, encoding="utf-8")
+        bname = "B" + name[1:]
+        (OUT / bname).write_text(to_b(html), encoding="utf-8")
+        print("zapisano", name, bname)
