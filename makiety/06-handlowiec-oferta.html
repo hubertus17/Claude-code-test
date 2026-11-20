@@ -13,6 +13,7 @@
     .lims{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:20px}
     .lim{padding:14px 20px;border-right:1px solid var(--line-2)}.lim:last-child{border-right:0}
     .lim-t{display:flex;justify-content:space-between;margin-bottom:8px}
+    .lim-w{display:flex;gap:6px;align-items:center;margin-top:8px;font-size:12.5px;font-weight:600;color:var(--bad)}
     .lim-f{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute);margin-top:6px}
     .cols{display:grid;grid-template-columns:1fr 352px;gap:20px;align-items:start}
     .pr{display:flex;gap:12px;align-items:center}
@@ -21,7 +22,7 @@
     .qty{width:92px}
     .pr b{font-size:14px;font-weight:600}
     .slip .tbl th:first-child{width:38%}
-    aside .tbl th,aside .tbl td{padding-left:10px;padding-right:10px}
+    aside .tbl{table-layout:fixed}aside .tbl th,aside .tbl td{padding-left:10px;padding-right:10px}aside .tbl th:first-child,aside .tbl td:first-child{padding-left:20px;width:46%}aside .tbl th:last-child,aside .tbl td:last-child{padding-right:16px}
     .send{display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;padding:16px 20px}
     .send .t{font-size:13px;color:var(--sky-ink)}
     .send b{font-size:22px;font-weight:800}
@@ -49,7 +50,7 @@
           <div class="meter"><i style="width:62%;background:var(--s-pet)"></i></div>
           <div class="lim-f"><span>Wykorzystano 12 480 zł</span><span>Limit 20 000 zł</span></div></div><div class="lim"><div class="lim-t"><span class="seller"><i class="sw vet"></i>Fenix Vet</span><span class="mono">90%</span></div>
           <div class="meter"><i style="width:90%;background:var(--bad)"></i></div>
-          <div class="lim-f"><span>Wykorzystano 10 850 zł</span><span>Limit 12 000 zł</span></div></div><div class="lim"><div class="lim-t"><span class="seller"><i class="sw own"></i>Marka własna grupy</span><span class="mono">27%</span></div>
+          <div class="lim-f"><span>Wykorzystano 10 850 zł</span><span>Limit 12 000 zł</span></div><div class="lim-w"><svg class="ic s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4"/><path d="M12 17.5v.01"/></svg>Ta oferta przekroczy limit o 18 zł</div></div><div class="lim"><div class="lim-t"><span class="seller"><i class="sw own"></i>Marka własna grupy</span><span class="mono">27%</span></div>
           <div class="meter"><i style="width:27%;background:var(--s-own)"></i></div>
           <div class="lim-f"><span>Wykorzystano 2 140 zł</span><span>Limit 8 000 zł</span></div></div></section>
   <div class="cols">

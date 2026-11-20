@@ -77,7 +77,6 @@ def pulpit():
     for k, st, label, meta, act in optima:
         stc = "pill ok" if st == "ok" else "pill sig"
         opt_html += f'''<div class="opt {'warn' if st != 'ok' else ''}">
-          <div class="opt-t">{ic("plug","s")}<span>Comarch ERP Optima</span></div>
           <div class="opt-m"><span class="seller"><i class="sw {k}"></i>{SELLER[k][0]}</span><span class="{stc}">{label}</span></div>
           <div class="opt-f"><span>{meta}</span>{act}</div></div>'''
 
@@ -92,7 +91,7 @@ def pulpit():
     rows = [
         ("VS-26-04831", "B2C", parts(("pet", "ok"), ("own", "ok")), "Przychodnia Weterynaryjna Pod Lipami", "Poznań", 255.99, "ok", "Wysłane"),
         ("VS-26-04830", "B2B", parts(("pet", "ok"), ("vet", "pend"), ("own", "ok")), "Lecznica Zwierząt Arka", "Konin", 4812.40, "sig", "Część czeka na Optimę"),
-        ("VS-26-04829", "B2C", parts(("vet", "ok")), "Gabinet Weterynaryjny Animal", "Gniezno", 89.90, "ok", "Wysłane"),
+        ("VS-26-04829", "B2C", parts(("vet", "ok")), "Przychodnia Na Wildzie", "Poznań", 89.90, "ok", "Wysłane"),
         ("VS-26-04828", "B2C", parts(("pet", "ok"), ("own", "wait")), "Klinika Weterynaryjna Sfora", "Leszno", 342.50, "warn", "Częściowo wysłane"),
         ("VS-26-04827", "B2B", parts(("pet", "ok"), ("vet", "ok"), ("own", "wait")), "Centrum Weterynaryjne Oaza", "Piła", 7236.00, "warn", "Częściowo wysłane"),
         ("VS-26-04826", "B2C", parts(("pet", "ok")), "Przychodnia Weterynaryjna Pod Lipami", "Poznań", 118.00, "ok", "Wysłane"),
@@ -131,7 +130,7 @@ def pulpit():
     .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
     .opt{background:var(--stock);border:1px solid var(--line);padding:14px 18px;display:flex;flex-direction:column;gap:10px}
     .opt.warn{border-color:var(--sig);box-shadow:inset 0 0 0 1px var(--sig)}
-    .opt-t{display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--mute);font-weight:600}
+    .sec{display:flex;gap:8px;align-items:center;font-size:15px;margin-bottom:10px}.sec .ic{color:var(--navy)}
     .opt-m{display:flex;justify-content:space-between;align-items:center;gap:10px}
     .opt-m .seller{font-size:16px}
     .opt-f{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mute);min-height:32px;border-top:1px dashed var(--line);padding-top:10px}
@@ -158,6 +157,7 @@ def pulpit():
   <div class="top"><h1>Pulpit</h1><span class="mute" style="margin-top:6px">22.10 – 20.11.2026 · cała grupa</span>
     <div class="r"><div class="seg"><span>Dziś</span><span>7 dni</span><span class="on">30 dni</span><span>Rok</span></div>
     <a class="btn" href="#">{ic("download","s")}Eksport XLSX</a></div></div>
+  <h2 class="sec">{ic("plug")}Status integracji z Comarch ERP Optima</h2>
   <div class="opts">{opt_html}</div>
   <div class="grid">
     <section class="panel">
@@ -219,7 +219,8 @@ def koszyk():
     .club{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;padding:10px 0}
     .chk{width:18px;height:18px;border:1.5px solid var(--ink-2);border-radius:3px;flex:none;margin-top:1px}
     .pay{display:flex;gap:8px;margin-top:12px}
-    .pay span{flex:1;height:36px;border:1px solid var(--line);display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--ink-2)}
+    .pay span{flex:1;height:38px;border:1px solid var(--line);display:flex;gap:6px;justify-content:center;align-items:center;font-size:13px;font-weight:700;color:var(--ink-2)}
+    .pay span.on{border:2px solid var(--navy);color:var(--navy);background:#eef3f9}
     .docs{display:flex;gap:10px;font-size:13px;color:var(--ink-2);margin-top:14px;align-items:flex-start}
     .docs .ic{color:var(--navy)}
     """
@@ -230,15 +231,15 @@ def koszyk():
   <h1>Twój koszyk</h1>
   <p class="lead">Jedno zamówienie i jedna płatność. Produkty wyślą dwaj sprzedawcy z grupy Fenix, każdy ze swojego magazynu.</p>
   <div class="slip">
-    {slip_head("PACZKA 1/2", "pet", "Wysyłka z magazynu Nowy Tomyśl · jutro", bars("pet"))}
+    {slip_head("CZĘŚĆ 1/2", "pet", "Wysyłka z magazynu Nowy Tomyśl · jutro", "")}
     {item("bag", "pet", "Dieta weterynaryjna na układ pokarmowy, małe rasy, 2 kg", "Karma sucha dla psa", 118)}
     {item("can", "pet", "Mokra karma hipoalergiczna dla psa, dzik i ziemniaki, 400 g", "Karma mokra dla psa", 22)}
-    <div class="slip-f"><span class="mono">SPRZEDAWCA: FENIX PET</span><span>Razem <b>{zl(140)}</b></span></div>
+    <div class="slip-f"><span>Fakturę wystawi Fenix Pet · osobna paczka</span><span>Razem <b>{zl(140)}</b></span></div>
   </div>
   <div class="slip">
-    {slip_head("PACZKA 2/2", "own", "Wysyłka z magazynu Poznań · jutro", bars("own"))}
+    {slip_head("CZĘŚĆ 2/2", "own", "Wysyłka z magazynu Poznań · jutro", "")}
     {item("pouch", "own", "Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.", "Kąski funkcjonalne dla psa", 101)}
-    <div class="slip-f"><span class="mono">SPRZEDAWCA: MARKA WŁASNA GRUPY</span><span>Razem <b>{zl(101)}</b></span></div>
+    <div class="slip-f"><span>Fakturę wystawi Marka własna grupy · osobna paczka</span><span>Razem <b>{zl(101)}</b></span></div>
   </div>
   <div class="sugg"><div class="thumb">{product("tray", "own")}</div>
     <div><span class="k">{ic("paw","s")}Pasuje do diety w koszyku</span><b style="display:block;margin-top:4px;font-weight:600">Karma funkcjonalna na jelita, dzik i jabłko, 400 g</b><span class="mute" style="font-size:13px">Trafi do paczki 2 – bez dopłaty do dostawy</span></div>
@@ -246,7 +247,7 @@ def koszyk():
     <a class="btn navy" href="#">{ic("plus","s")}Dodaj</a></div>
 </section>
 <aside class="bill">
-  <div class="bill-h"><h2>Podsumowanie</h2><span class="mono mute">1 PŁATNOŚĆ · 2 PACZKI</span></div>
+  <div class="bill-h"><h2>Podsumowanie</h2><span class="mute" style="font-size:13px">1 płatność · 2 paczki</span></div>
   <div class="bill-b">
     <div class="row"><span class="seller"><i class="sw pet"></i>Fenix Pet</span><span>{zl(140)}</span></div>
     <div class="row"><span class="seller"><i class="sw own"></i>Marka własna grupy</span><span>{zl(101)}</span></div>
@@ -260,7 +261,7 @@ def koszyk():
     <div class="club"><span class="chk"></span><div><b>Użyj 120 pkt VETSPOT CLUB</b> (−12,00 zł)<br><span class="mute">Za to zamówienie dostaniesz 24 pkt.</span></div></div>
     <div class="dash"></div>
     <div class="row"><span style="font-weight:700">Do zapłaty</span><span class="total">{zl(255.99)}</span></div>
-    <div class="pay"><span>Przelewy24</span><span>BLIK</span><span>Apple Pay</span></div>
+    <div class="pay"><span>Przelewy24</span><span class="on">{ic("check","s")}BLIK</span><span>Apple Pay</span></div>
     <a class="btn primary lg block" style="margin-top:14px" href="#">Zamawiam i płacę</a>
     <div class="docs">{ic("file","s")}<span>Dokumenty wystawi każdy sprzedawca osobno. Komplet faktur wyślemy w jednym e-mailu.</span></div>
   </div>
@@ -279,7 +280,7 @@ def zamowienie():
     .acc a.on{background:var(--navy);color:#fff;font-weight:700}.acc a.on .ic{color:var(--sky)}
     .crumb{font-size:13px;color:var(--mute);display:flex;gap:6px;align-items:center;margin-bottom:8px}
     .facts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 8px}
-    .facts span{display:inline-flex;gap:6px;align-items:center;height:30px;padding:0 12px;background:var(--stock);border:1px solid var(--line);font-size:13.5px;font-weight:600}
+    .facts{gap:20px!important}.facts span{display:inline-flex;gap:6px;align-items:center;font-size:14px;font-weight:600;color:var(--ink-2)}
     .facts .ic{color:var(--navy)}
     .mailnote{display:flex;gap:10px;align-items:center;font-size:13.5px;color:var(--ink-2);margin-bottom:22px}
     .slip{margin-bottom:20px}
@@ -314,21 +315,21 @@ def zamowienie():
   <div class="mailnote">{ic("mail","s")}<span><b>Jeden e-mail z kompletem dokumentów</b> wysłaliśmy na an•••@gmail.com 14.11.2026, 10:42</span></div>
 
   <div class="slip">
-    {slip_head("VS-26-04812/1", "pet", "Magazyn Nowy Tomyśl", '<span class="pill ok">Wysłana · InPost</span>')}
+    {slip_head("VS-26-04812/1", "pet", "Magazyn Nowy Tomyśl", '<span class="pill ok">Wysłana · InPost</span>' + bars("620344128890"))}
     <div class="trk"><div><div style="font-size:13px;color:var(--mute)">Numer przesyłki</div><div class="mono" style="font-size:14px;font-weight:700;color:var(--ink)">6203 4412 8890 1123 5567 01</div>
       <div class="line"><span class="dot"></span><span class="bar"></span><span class="dot"></span><span class="bar"></span><span class="dot"></span><span class="bar off"></span><span class="dot off"></span></div>
       <div class="lbls"><span>Nadana 14.11</span><span>W drodze</span><span><b>W paczkomacie POZ12M</b></span><span>Odebrana</span></div></div>
       <a class="btn navy" href="#">Śledź przesyłkę{ic("ext","s")}</a></div>
     <div class="it" style="border-top:0"><div class="thumb">{product("bag","pet")}</div><div class="it-n"><b>Dieta weterynaryjna na układ pokarmowy, małe rasy, 2 kg</b><span>1 szt.</span></div><a class="link" href="#">Zwróć / Reklamuj</a><div class="it-p">{zl(118)}</div></div>
     <div class="it"><div class="thumb">{product("can","pet")}</div><div class="it-n"><b>Mokra karma hipoalergiczna dla psa, dzik i ziemniaki, 400 g</b><span>1 szt.</span></div><a class="link" href="#">Zwróć / Reklamuj</a><div class="it-p">{zl(22)}</div></div>
-    <div class="slip-f"><span class="mono">WYSTAWCA FAKTURY: FENIX PET</span><a class="btn sm" href="#">{ic("download","s")}Faktura Fenix Pet (PDF)</a></div>
+    <div class="slip-f"><span>Fakturę wystawił Fenix Pet</span><a class="btn sm" href="#">{ic("download","s")}Faktura Fenix Pet (PDF)</a></div>
   </div>
 
   <div class="slip">
     {slip_head("VS-26-04812/2", "own", "Magazyn Poznań", '<span class="pill warn">Brak towaru · zwrot środków</span>')}
     <div class="refund">{ic("undo")}<div><b>Zwróciliśmy {zl(101)} na Twoje konto.</b><br>Zwrot z rachunku tego sprzedawcy. Pozostałe części realizowane normalnie.</div></div>
     <div class="it gone" style="border-top:0"><div class="thumb">{product("pouch","own")}</div><div class="it-n"><b>Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.</b><span>1 szt. · niedostępny w magazynie</span></div><span></span><div class="it-p" style="color:var(--mute);text-decoration:line-through">{zl(101)}</div></div>
-    <div class="slip-f"><span class="mono">WYSTAWCA KOREKTY: MARKA WŁASNA GRUPY</span><a class="btn sm" href="#">{ic("download","s")}Korekta (PDF)</a></div>
+    <div class="slip-f"><span>Korektę wystawiła Marka własna grupy</span><a class="btn sm" href="#">{ic("download","s")}Korekta (PDF)</a></div>
   </div>
 </section>
 <aside class="sum">
@@ -500,7 +501,7 @@ def handlowiec_oferta():
         col = "var(--bad)" if pct > 85 else f"var(--s-{k})"
         lim += f'''<div class="lim"><div class="lim-t"><span class="seller"><i class="sw {k}"></i>{SELLER[k][0]}</span><span class="mono">{pct:.0f}%</span></div>
           <div class="meter"><i style="width:{pct:.0f}%;background:{col}"></i></div>
-          <div class="lim-f"><span>Wykorzystano {zl(u, False)}</span><span>Limit {zl(l, False)}</span></div></div>'''
+          <div class="lim-f"><span>Wykorzystano {zl(u, False)}</span><span>Limit {zl(l, False)}</span></div>{('<div class="lim-w">'+ic("alert","s")+'Ta oferta przekroczy limit o 18 zł</div>') if k=="vet" else ''}</div>'''
 
     def line(kind, key, name, unit, pack, packn, qty):
         val = pack * qty
@@ -538,6 +539,7 @@ def handlowiec_oferta():
     .lims{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:20px}
     .lim{padding:14px 20px;border-right:1px solid var(--line-2)}.lim:last-child{border-right:0}
     .lim-t{display:flex;justify-content:space-between;margin-bottom:8px}
+    .lim-w{display:flex;gap:6px;align-items:center;margin-top:8px;font-size:12.5px;font-weight:600;color:var(--bad)}
     .lim-f{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute);margin-top:6px}
     .cols{display:grid;grid-template-columns:1fr 352px;gap:20px;align-items:start}
     .pr{display:flex;gap:12px;align-items:center}
@@ -546,7 +548,7 @@ def handlowiec_oferta():
     .qty{width:92px}
     .pr b{font-size:14px;font-weight:600}
     .slip .tbl th:first-child{width:38%}
-    aside .tbl th,aside .tbl td{padding-left:10px;padding-right:10px}
+    aside .tbl{table-layout:fixed}aside .tbl th,aside .tbl td{padding-left:10px;padding-right:10px}aside .tbl th:first-child,aside .tbl td:first-child{padding-left:20px;width:46%}aside .tbl th:last-child,aside .tbl td:last-child{padding-right:16px}
     .send{display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;padding:16px 20px}
     .send .t{font-size:13px;color:var(--sky-ink)}
     .send b{font-size:22px;font-weight:800}
@@ -588,33 +590,29 @@ def strefa():
     months = ["gru", "sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis"]
     rnd = random.Random(7)
     turn = [round(rnd.uniform(3600, 6400) * (1 + i * 0.03)) for i in range(12)]
-    W, H, L, B, T = 700, 230, 52, 26, 12
-    pw, ph = W - L - 52, H - B - T
+    W, H, L, B, T = 700, 250, 60, 46, 12
+    pw, ph = W - L - 8, H - B - T
     vmax = 9000
     bw = pw / 12
     g = ""
     for v in range(0, 9001, 3000):
         y = T + ph - v / vmax * ph
         g += f'<line x1="{L}" x2="{L+pw}" y1="{y:.1f}" y2="{y:.1f}" stroke="{"#9aa7b4" if v == 0 else "#e3e8ee"}"/><text x="{L-8}" y="{y+4:.1f}" text-anchor="end">{v//1000} tys.</text>'
-        g += f'<text x="{L+pw+8}" y="{y+4:.1f}" fill="#9a3412">{int(v*0.1)} zł</text>'
-    pts = []
+    g += f'<text x="{L-8}" y="{H-8}" text-anchor="end" fill="#9a3412" font-weight="600">prowizja</text>'
     for i, v in enumerate(turn):
         x = L + i * bw + 6
         h = v / vmax * ph
+        cx = x + (bw - 12) / 2
         g += f'<rect x="{x:.1f}" y="{T+ph-h:.1f}" width="{bw-12:.1f}" height="{h:.1f}" fill="{"#123a63" if i == 11 else "#9fc0e3"}"/>'
-        g += f'<text x="{x+(bw-12)/2:.1f}" y="{H-6}" text-anchor="middle">{months[i]}</text>'
-        cy = T + ph - (v * 0.1) / (vmax * 0.1) * ph
-        pts.append((x + (bw - 12) / 2, cy))
-    poly = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
-    g += f'<polyline points="{poly}" fill="none" stroke="#c2410c" stroke-width="2.5"/>'
-    g += "".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.5" fill="#fff" stroke="#c2410c" stroke-width="2"/>' for x, y in pts)
+        g += f'<text x="{cx:.1f}" y="{T+ph+16}" text-anchor="middle">{months[i]}</text>'
+        g += f'<text x="{cx:.1f}" y="{H-8}" text-anchor="middle" fill="#9a3412" font-weight="600">{round(v*0.1)} zł</text>'
     chart = f'<svg viewBox="0 0 {W} {H}" width="100%" style="display:block;font:11.5px Archivo;fill:#5b6673">{g}</svg>'
 
-    tx = [("Ann***", "19.11.2026", 255.99), ("Tom***", "18.11.2026", 412.40), ("Kas***", "18.11.2026", 118.00),
+    tx = [("Ann***", "19.11.2026", 241.00), ("Tom***", "18.11.2026", 412.40), ("Kas***", "18.11.2026", 118.00),
           ("Mar***", "16.11.2026", 342.50), ("Jak***", "15.11.2026", 89.90), ("Ewa***", "14.11.2026", 204.10)]
     txr = "".join(f'<tr><td><span class="who">{c}</span></td><td>{d}</td><td class="r">{zl(v)}</td><td class="r strong">{zl(v*0.1)}</td></tr>' for c, d, v in tx)
 
-    accts = [("pet", 20000, 12480, 0, "PL 61 1090 1014 0000 0712 1981 2874"),
+    accts = [("pet", 20000, 12480, 2140.50, "PL 61 1090 1014 0000 0712 1981 2874"),
              ("vet", 12000, 10850, 2028.30, "PL 27 1140 2004 0000 3002 0135 5387"),
              ("own", 8000, 2140, 0, "PL 83 1020 4027 0000 1102 0450 7731")]
     acc = ""
@@ -624,10 +622,16 @@ def strefa():
           <div class="acc-f"><span>Limit kupiecki {zl(l, False)} · wykorzystano {zl(u, False)}</span></div>
           <div class="iban"><span class="mute">Rachunek {SELLER[k][0]}</span><span class="mono">{iban}</span></div></div>'''
 
-    offer_items = [("pet", "bag", "Dieta weterynaryjna na układ pokarmowy, małe rasy, 2 kg", "4 × opak. 6 szt.", 1982.40),
-                   ("vet", "bottle", "Suplement na stawy dla psa, 60 tabletek", "2 × opak. 10 szt.", 1168.00),
-                   ("own", "pouch", "Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.", "2 × opak. 8 szt.", 1102.40)]
-    oi = "".join(f'<div class="oi"><div class="thumb sm">{product(kind,k)}</div><div><b>{nm}</b><span class="sub"><i class="sw {k}"></i> {SELLER[k][0]} · {q}</span></div><b class="num">{zl(v)}</b></div>' for k, kind, nm, q, v in offer_items)
+    offer_groups = [("pet", [("bag", "Dieta weterynaryjna na układ pokarmowy, małe rasy, 2 kg", "4 × opak. 6 szt.", 1982.40),
+                             ("can", "Mokra karma hipoalergiczna dla psa, dzik i ziemniaki, 400 g", "3 × opak. 12 szt.", 536.40)]),
+                    ("vet", [("bottle", "Suplement na stawy dla psa, 60 tabletek", "2 × opak. 10 szt.", 1168.00)]),
+                    ("own", [("pouch", "Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.", "2 × opak. 8 szt.", 1102.40),
+                             ("tray", "Karma funkcjonalna na jelita, dzik i jabłko, 400 g", "4 × opak. 12 szt.", 470.40)])]
+    oi = ""
+    for gi, (k, its) in enumerate(offer_groups, 1):
+        sub = sum(x[3] for x in its)
+        oi += f'<div class="og"><span class="tag">CZĘŚĆ {gi}/3</span><span class="seller"><i class="sw {k}"></i>{SELLER[k][0]}</span><b class="num">{zl(sub)}</b></div>'
+        oi += "".join(f'<div class="oi"><div class="thumb sm">{product(kind,k)}</div><div><b>{nm}</b><span class="sub">{q}</span></div><span class="num">{zl(v)}</span></div>' for kind, nm, q, v in its)
 
     css = """
     .zh{background:var(--navy);color:#fff;display:flex;align-items:center;gap:24px;padding:0 48px;height:72px}
@@ -646,7 +650,9 @@ def strefa():
     .figs .fig.hl{background:var(--sig-wash)}
     .legend{display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
     .legend span{display:flex;gap:6px;align-items:center}
-    .oi{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line-2);font-size:14px}
+    .og{display:flex;gap:10px;align-items:center;padding:10px 20px;background:var(--wash);border-bottom:1.5px dashed var(--line)}.og b{margin-left:auto}
+    .oi{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:8px 20px;border-bottom:1px solid var(--line-2);font-size:13.5px}
+    .oi .thumb.sm{width:40px;height:40px}.oi .thumb.sm svg{width:30px;height:30px}
     .oi b{font-weight:600}.oi .sub{display:flex;gap:6px;align-items:center;font-size:12.5px;color:var(--mute);margin-top:2px}
     .thumb.sm{width:52px;height:52px}.thumb.sm svg{width:40px;height:40px}
     .oa{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--wash)}
@@ -674,7 +680,7 @@ def strefa():
         <div class="fig"><small>Prowizja rozliczona</small><b>{zl(3118.20)}</b><span class="mute" style="font-size:12.5px">wypłacona na Twój rachunek</span></div>
         <div class="fig hl"><small>Do rozliczenia</small><b style="color:var(--sig-ink)">{zl(1168.20)}</b><span style="font-size:12.5px;color:var(--sig-ink)">wgraj fakturę, by otrzymać wypłatę</span></div>
       </div>
-      <div class="panel-h" style="border-bottom:0;padding-bottom:4px"><h2>Obrót i prowizja</h2><div class="legend" style="margin-left:16px"><span><i class="sw" style="background:#9fc0e3"></i>Obrót klientów</span><span><i class="sw" style="background:#c2410c;height:3px"></i>Prowizja</span></div>
+      <div class="panel-h" style="border-bottom:0;padding-bottom:4px"><h2>Obrót i prowizja</h2><div class="legend" style="margin-left:16px"><span><i class="sw" style="background:#9fc0e3"></i>Obrót klientów</span><span style="color:#9a3412">Prowizja 10% pod osią</span></div>
         <div class="r"><div class="seg"><span class="on">Miesiąc</span><span>Kwartał</span><span>Rok</span></div></div></div>
       <div style="padding:4px 16px 12px">{chart}</div>
     </section>
@@ -682,12 +688,12 @@ def strefa():
       <div class="panel-h"><h2>Oferta od opiekuna do akceptacji</h2><span class="pill sig">Nowa</span></div>
       <div style="padding:10px 20px;font-size:13px;color:var(--ink-2);border-bottom:1px solid var(--line-2)">Marek Zieliński · 20.11.2026 · ważna do 04.12.2026</div>
       {oi}
-      <div class="oa"><div><span class="mute" style="font-size:12.5px;display:block">Razem netto · 3 faktury</span><b class="num">{zl(4252.80)}</b></div><a class="btn primary lg" href="#">{ic("check","s")}Akceptuj</a></div>
+      <div class="oa"><div><span class="mute" style="font-size:12.5px;display:block">Razem netto · 3 faktury</span><b class="num">{zl(5259.60)}</b></div><a class="btn primary lg" href="#">{ic("check","s")}Akceptuj</a></div>
     </section>
   </div>
   <div class="bottom">
     <section class="panel"><div class="panel-h"><h2>Transakcje z rekomendacji</h2><span class="priv r">{ic("eyeoff","s")}Bez koszyka, adresu i telefonu klienta</span></div>
-      <table class="tbl"><thead><tr><th>Klient</th><th>Data</th><th class="r">Wartość zamówienia</th><th class="r">Prowizja</th></tr></thead><tbody>{txr}</tbody></table></section>
+      <table class="tbl"><thead><tr><th>Klient</th><th>Data</th><th class="r">Wartość produktów</th><th class="r">Prowizja 10%</th></tr></thead><tbody>{txr}</tbody></table></section>
     <section class="panel"><div class="panel-h"><h2>Limity kupieckie i należności</h2><span class="mute" style="font-size:12.5px;margin-left:auto">osobno dla każdego sprzedawcy</span></div>{acc}</section>
   </div>
 </div>'''
