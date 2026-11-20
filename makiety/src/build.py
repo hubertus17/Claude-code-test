@@ -63,7 +63,7 @@ def pulpit():
     grid.append(f'<text x="{xl:.1f}" y="{H-6}" text-anchor="middle" font-weight="700" fill="#14181d">dziś</text>')
     chart = f'<svg viewBox="0 0 {W} {H}" width="100%" style="display:block;font:11.5px Archivo;fill:#5b6673">{"".join(grid)}{"".join(bars)}</svg>'
 
-    wh = {"pet": "Magazyn Nowy Tomyśl", "vet": "Magazyn Opalenica", "own": "Magazyn Poznań"}
+    wh = {"pet": "Magazyn Fenix Pet", "vet": "Magazyn Fenix Vet", "own": "Magazyn marki własnej"}
     share_rows = ""
     for k, v in zip(("pet", "vet", "own"), tot):
         share_rows += f'<tr><td>{seller(k)}</td><td class="mute">{wh[k]}</td><td class="r strong">{zl(v, False)}</td><td class="r">{str(round(v/total*100,1)).replace(".",",")}%</td><td style="width:180px"><div class="meter"><i style="width:{v/max(tot)*100:.0f}%;background:var(--s-{k})"></i></div></td></tr>'
@@ -80,16 +80,16 @@ def pulpit():
           <div class="opt-m"><span class="seller"><i class="sw {k}"></i>{SELLER[k][0]}</span><span class="{stc}">{label}</span></div>
           <div class="opt-f"><span>{meta}</span>{act}</div></div>'''
 
-    P = {"ok": ic("check", "s st"), "wait": ic("clock", "s st"), "pend": ic("alert", "s st")}
+    P = {"ok": ic("check", "s st"), "wait": ic("clock", "s st"), "pend": ic("alert", "s st"), "gone": ic("x", "s st")}
 
     def parts(*ps):
         out = []
         for i, (k, s) in enumerate(ps, 1):
-            out.append(f'<span class="part {"pending" if s == "pend" else ""} p-{s}"><i style="background:var(--s-{k})"></i>/{i} {SELLER[k][0].replace("Marka własna grupy","Marka własna")}{P[s]}</span>')
+            out.append(f'<span class="part {"pending" if s == "pend" else ""} p-{s}"><i style="background:var(--s-{k})"></i>/{i} {SELLER[k][0].replace("Marka własna grupy","Marka własna")}{" · brak towaru" if s == "gone" else ""}{P[s]}</span>')
         return '<div class="parts">' + "".join(out) + '</div>'
 
     rows = [
-        ("VS-26-04831", "B2C", parts(("pet", "ok"), ("own", "ok")), "Przychodnia Weterynaryjna Pod Lipami", "Poznań", 255.99, "ok", "Wysłane"),
+        ("VS-26-04831", "B2C", parts(("pet", "ok"), ("own", "gone")), "Przychodnia Weterynaryjna Pod Lipami", "Poznań", 249.99, "warn", "Częściowo zrealizowane · zwrot"),
         ("VS-26-04830", "B2B", parts(("pet", "ok"), ("vet", "pend"), ("own", "ok")), "Lecznica Zwierząt Arka", "Konin", 4812.40, "sig", "Część czeka na Optimę"),
         ("VS-26-04829", "B2C", parts(("vet", "ok")), "Przychodnia Na Wildzie", "Poznań", 89.90, "ok", "Wysłane"),
         ("VS-26-04828", "B2C", parts(("pet", "ok"), ("own", "wait")), "Klinika Weterynaryjna Sfora", "Leszno", 342.50, "warn", "Częściowo wysłane"),
@@ -98,7 +98,7 @@ def pulpit():
         ("VS-26-04825", "B2C", parts(("vet", "ok"), ("own", "ok")), "Przychodnia Na Wildzie", "Poznań", 164.30, "ok", "Wysłane"),
     ]
     trs = "".join(
-        f'<tr><td class="mono strong">{a}</td><td><span class="tag {"light" if b=="B2C" else ""}">{b}</span></td><td>{c}</td><td>{d}<span class="sub">{e}</span></td><td class="r strong">{zl(f)}</td><td><span class="pill {g}">{h}</span></td></tr>'
+        f'<tr><td class="mono strong">{a}</td><td><span class="tag {"light" if b=="B2C" else ""}">{b}</span></td><td>{c}</td><td>{d}<span class="sub">{e}</span></td><td class="r strong">{zl(f)}{'<span class="sub" style="font-weight:500">po zwrocie '+zl(148.99)+'</span>' if a=="VS-26-04831" else ''}</td><td><span class="pill {g}">{h}</span></td></tr>'
         for a, b, c, d, e, f, g, h in rows)
 
     notes = f'''
@@ -148,7 +148,7 @@ def pulpit():
     .urgent .ni-h .ic{color:var(--sig-ink)}
     .note-i p{font-size:13.5px;color:var(--ink-2);margin:6px 0 10px 30px}
     .ni-a{display:flex;gap:12px;align-items:center;margin-left:30px;font-size:12.5px}
-    .part.p-ok .st{color:var(--ok)}.part.p-wait .st{color:var(--mute)}.part.p-pend .st{color:var(--sig-ink)}
+    .part.p-ok .st{color:var(--ok)}.part.p-wait .st{color:var(--mute)}.part.p-pend .st{color:var(--sig-ink)}.part.p-gone{border-color:var(--warn);background:var(--warn-wash)}.part.p-gone .st{color:var(--warn)}
     .count{font-size:12px;font-weight:700;background:var(--sig);color:#fff;border-radius:10px;padding:2px 8px}
     """
     body = f'''<div class="app">
@@ -231,19 +231,19 @@ def koszyk():
   <h1>Twój koszyk</h1>
   <p class="lead">Jedno zamówienie i jedna płatność. Produkty wyślą dwaj sprzedawcy z grupy Fenix, każdy ze swojego magazynu.</p>
   <div class="slip">
-    {slip_head("CZĘŚĆ 1/2", "pet", "Wysyłka z magazynu Nowy Tomyśl · jutro", "")}
+    {slip_head("CZĘŚĆ 1/2", "pet", "Magazyn Fenix Pet · wysyłka do 72 h", "")}
     {item("bag", "pet", "Dieta weterynaryjna na układ pokarmowy, małe rasy, 2 kg", "Karma sucha dla psa", 118)}
     {item("can", "pet", "Mokra karma hipoalergiczna dla psa, dzik i ziemniaki, 400 g", "Karma mokra dla psa", 22)}
     <div class="slip-f"><span>Fakturę wystawi Fenix Pet · osobna paczka</span><span>Razem <b>{zl(140)}</b></span></div>
   </div>
   <div class="slip">
-    {slip_head("CZĘŚĆ 2/2", "own", "Wysyłka z magazynu Poznań · jutro", "")}
+    {slip_head("CZĘŚĆ 2/2", "own", "Magazyn marki własnej · wysyłka do 72 h", "")}
     {item("pouch", "own", "Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.", "Kąski funkcjonalne dla psa", 101)}
     <div class="slip-f"><span>Fakturę wystawi Marka własna grupy · osobna paczka</span><span>Razem <b>{zl(101)}</b></span></div>
   </div>
   <h2 class="sugg-h">{ic("paw")}Pasuje do diety w koszyku</h2>
   <div class="sugg"><div class="thumb">{product("tray", "own")}</div>
-    <div><b style="display:block;font-weight:600">Karma funkcjonalna na jelita, dzik i jabłko, 400 g</b><span class="mute" style="font-size:13px">Trafi do paczki 2 – bez dopłaty do dostawy</span></div>
+    <div><b style="display:block;font-weight:600">Karma funkcjonalna na jelita, dzik i jabłko, 400 g</b><span class="mute" style="font-size:13px">Marka własna grupy</span></div>
     <div style="text-align:right;font-weight:700;font-size:16px"><span class="price-old">{zl(16)}</span>{zl(15)}</div>
     <a class="btn navy" href="#">{ic("plus","s")}Dodaj</a></div>
 </section>
@@ -253,15 +253,15 @@ def koszyk():
     <div class="row"><span class="seller"><i class="sw pet"></i>Fenix Pet</span><span>{zl(140)}</span></div>
     <div class="row"><span class="seller"><i class="sw own"></i>Marka własna grupy</span><span>{zl(101)}</span></div>
     <div class="ship">
-      <div class="row" style="padding:0"><b>{ic("truck","s")}Dostawa InPost</b><b>{zl(14.99)}</b></div>
+      <div class="row" style="padding:0"><b>{ic("truck","s")}Paczkomat InPost</b><b>{zl(8.99)}</b></div>
       <div style="font-size:13px;color:var(--ok);font-weight:600;margin-top:4px">2 paczki bez dodatkowych kosztów – płacisz za dostawę raz</div>
       <div class="prog"><i style="width:{241/300*100:.0f}%"></i></div>
       <div style="font-size:12.5px;color:var(--ink-2)">Darmowa dostawa od 300 zł · brakuje Ci jeszcze <b>{zl(59)}</b></div>
     </div>
     <div class="row" style="margin-top:6px"><div class="input" style="flex:1;height:40px">{ic("tag","s")}Kod rabatowy</div><a class="btn" href="#">Zastosuj</a></div>
-    <div class="club"><span class="chk"></span><div><b>Użyj 120 pkt VETSPOT CLUB</b> (−12,00 zł)<br><span class="mute">Za to zamówienie dostaniesz 24 pkt.</span></div></div>
+    <div class="club"><span class="chk"></span><div><b>Użyj 120 pkt VETSPOT CLUB</b> (−12,00 zł)<br><span class="mute">Za to zamówienie dostaniesz 241 pkt.</span></div></div>
     <div class="dash"></div>
-    <div class="row"><span style="font-weight:700">Do zapłaty</span><span class="total">{zl(255.99)}</span></div>
+    <div class="row"><span style="font-weight:700">Do zapłaty</span><span class="total">{zl(249.99)}</span></div>
     <div class="pay"><span>Przelewy24</span><span class="on">{ic("check","s")}BLIK</span><span>Apple Pay</span></div>
     <a class="btn primary lg block" style="margin-top:14px" href="#">Zamawiam i płacę</a>
     <div class="docs">{ic("file","s")}<span>Dokumenty wystawi każdy sprzedawca osobno. Komplet faktur wyślemy w jednym e-mailu.</span></div>
@@ -305,21 +305,21 @@ def zamowienie():
     """
     menu = [("Zamówienia", "box"), ("Moje dane", "user"), ("Lista zakupowa", "file"), ("VETSPOT CLUB", "star"), ("Reklamacje", "undo")]
     acc = "".join(f'<a href="#" class="{"on" if l == "Zamówienia" else ""}">{ic(i)}{l}</a>' for l, i in menu)
-    body = f'''{shop_header()}
+    body = f'''{shop_header(cart=0)}
 {shop_nav()}
 <div class="wrap">
 <nav class="acc">{acc}</nav>
 <section>
   <div class="crumb">Moje konto {ic("right","s")} Zamówienia</div>
-  <h1>Zamówienie <span style="font-family:var(--mono);font-weight:700;letter-spacing:0">VS-26-04812</span></h1>
+  <h1>Zamówienie <span style="font-family:var(--mono);font-weight:700;letter-spacing:0">VS-26-04831</span></h1>
   <div class="facts"><span>{ic("card","s")}Opłacone jedną płatnością</span><span>{ic("truck","s")}2 przesyłki</span><span>{ic("file","s")}Dokumenty od każdego sprzedawcy</span></div>
-  <div class="mailnote">{ic("mail","s")}<span><b>Jeden e-mail z kompletem dokumentów</b> wysłaliśmy na an•••@gmail.com 14.11.2026, 10:42</span></div>
+  <div class="mailnote">{ic("mail","s")}<span><b>Jeden e-mail z kompletem dokumentów</b> wysłaliśmy na an•••@gmail.com 18.11.2026, 10:42</span></div>
 
   <div class="slip">
-    {slip_head("VS-26-04812/1", "pet", "Magazyn Nowy Tomyśl", '<span class="pill ok">Wysłana · InPost</span>' + bars("620344128890"))}
+    {slip_head("VS-26-04831/1", "pet", "Magazyn Fenix Pet", '<span class="pill ok">Wysłana · InPost</span>' + bars("620344128890"))}
     <div class="trk"><div><div style="font-size:13px;color:var(--mute)">Numer przesyłki</div><div class="mono" style="font-size:14px;font-weight:700;color:var(--ink)">6203 4412 8890 1123 5567 01</div>
       <div class="line"><span class="dot"></span><span class="bar"></span><span class="dot"></span><span class="bar"></span><span class="dot"></span><span class="bar off"></span><span class="dot off"></span></div>
-      <div class="lbls"><span>Nadana 14.11</span><span>W drodze</span><span><b>W paczkomacie POZ12M</b></span><span>Odebrana</span></div></div>
+      <div class="lbls"><span>Nadana 19.11</span><span>W drodze</span><span><b>W paczkomacie POZ12M</b></span><span>Odebrana</span></div></div>
       <a class="btn navy" href="#">Śledź przesyłkę{ic("ext","s")}</a></div>
     <div class="it" style="border-top:0"><div class="thumb">{product("bag","pet")}</div><div class="it-n"><b>Dieta weterynaryjna na układ pokarmowy, małe rasy, 2 kg</b><span>1 szt.</span></div><a class="link" href="#">Zwróć / Reklamuj</a><div class="it-p">{zl(118)}</div></div>
     <div class="it"><div class="thumb">{product("can","pet")}</div><div class="it-n"><b>Mokra karma hipoalergiczna dla psa, dzik i ziemniaki, 400 g</b><span>1 szt.</span></div><a class="link" href="#">Zwróć / Reklamuj</a><div class="it-p">{zl(22)}</div></div>
@@ -327,7 +327,7 @@ def zamowienie():
   </div>
 
   <div class="slip">
-    {slip_head("VS-26-04812/2", "own", "Magazyn Poznań", '<span class="pill warn">Brak towaru · zwrot środków</span>')}
+    {slip_head("VS-26-04831/2", "own", "Magazyn marki własnej", '<span class="pill warn">Brak towaru · zwrot środków</span>')}
     <div class="refund">{ic("undo")}<div><b>Zwróciliśmy {zl(101)} na Twoje konto.</b><br>Zwrot z rachunku tego sprzedawcy. Pozostałe części realizowane normalnie.</div></div>
     <div class="it gone" style="border-top:0"><div class="thumb">{product("pouch","own")}</div><div class="it-n"><b>Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.</b><span>1 szt. · niedostępny w magazynie</span></div><span></span><div class="it-p" style="color:var(--mute);text-decoration:line-through">{zl(101)}</div></div>
     <div class="slip-f"><span>Korektę wystawiła Marka własna grupy</span><a class="btn sm" href="#">{ic("download","s")}Korekta (PDF)</a></div>
@@ -336,16 +336,16 @@ def zamowienie():
 <aside class="sum">
   <h2 style="margin-bottom:8px">Podsumowanie płatności</h2>
   <div class="row"><span>Produkty</span><span>{zl(241)}</span></div>
-  <div class="row"><span>Dostawa InPost · 2 paczki</span><span>{zl(14.99)}</span></div>
+  <div class="row"><span>Paczkomat InPost · 2 paczki</span><span>{zl(8.99)}</span></div>
   <div class="dash"></div>
-  <div class="row"><b>Zapłacono · BLIK</b><b>{zl(255.99)}</b></div>
+  <div class="row"><b>Zapłacono · BLIK</b><b>{zl(249.99)}</b></div>
   <div class="row" style="color:var(--warn)"><span>Zwrot · Marka własna grupy</span><span>−{zl(101)}</span></div>
   <div class="dash"></div>
-  <div class="row"><b>Koszt zamówienia</b><b style="font-size:20px;color:var(--navy)">{zl(154.99)}</b></div>
-  <div class="pts">{ic("star")}<div><b>+14 pkt VETSPOT CLUB</b><br><span class="mute" style="font-size:13px">Saldo po zamówieniu: 134 pkt</span></div></div>
+  <div class="row"><b>Koszt zamówienia</b><b style="font-size:20px;color:var(--navy)">{zl(148.99)}</b></div>
+  <div class="pts">{ic("star")}<div><b>+140 pkt VETSPOT CLUB</b><br><span class="mute" style="font-size:13px">Saldo po zamówieniu: 260 pkt</span></div></div>
 </aside>
 </div>'''
-    return page("Zamówienie VS-26-04812", body, css)
+    return page("Zamówienie VS-26-04831", body, css)
 
 
 # ============================================================ 04 REJESTRACJA
@@ -359,8 +359,8 @@ def rejestracja():
     lst = ""
     pins = ""
     for i, (nm, ad, d, sel, (x, y)) in enumerate(clinics, 1):
-        lst += f'''<div class="cl {'sel' if sel else ''}"><span class="radio"></span><div><b>{nm}</b><span>{ad} · {d}</span></div>{('<span class="pill ok">Wybrana</span>') if sel else ''}</div>'''
-        col = "#c2410c" if sel else "#123a63"
+        lst += f'''<div class="cl {'sel' if sel else ''}"><span class="radio"></span><span class="no {'on' if sel else ''}">{i}</span><div><b>{nm}</b><span>{ad} · {d}</span></div>{('<span class="pill ok">Wybrana</span>') if sel else ''}</div>'''
+        col = "#123a63" if sel else "#4f6b8a"
         r = 17 if sel else 13
         pins += f'<g transform="translate({x},{y})"><path d="M0 0c-{r*0.8:.0f}-{r:.0f}-{r:.0f}-{r*1.4:.0f}-{r:.0f}-{r*2:.0f}a{r} {r} 0 0 1 {2*r} 0c0 {r*0.6:.0f}-{r*0.2:.0f} {r:.0f}-{r} {r*2:.0f}z" fill="{col}" stroke="#fff" stroke-width="2"/><text y="-{r*1.95:.0f}" text-anchor="middle" fill="#fff" font-size="{13 if sel else 11}" font-weight="700">{i}</text></g>'
     roads = "".join(f'<path d="{d}" stroke="#fff" stroke-width="{w}" fill="none"/>' for d, w in [
@@ -382,11 +382,14 @@ def rejestracja():
     .steps{margin:0}
     .pet{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;background:#eef3f9;font-weight:600;font-size:14px;color:var(--navy);margin-top:12px}
     .card-b{padding:24px 28px}
-    .req{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--sig-ink);font-weight:600;margin-left:12px}
+    .req{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--navy);font-weight:600;margin-left:12px;background:#e6eef8;padding:3px 10px;border-radius:12px}
     .find{display:flex;gap:12px;margin:16px 0}
     .find .input{flex:1;height:46px}
     .res{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);height:340px}
-    .list{overflow:hidden;border-right:1px solid var(--line)}
+    .list{overflow:hidden;border-right:1px solid var(--line);display:flex;flex-direction:column}
+    .list .cl{flex:1}
+    .no{width:24px;height:24px;border-radius:50%;background:#4f6b8a;color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;flex:none}.no.on{background:var(--navy)}
+    .cl .no{color:#fff;font-size:12px}
     .cl{display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line-2);font-size:14px}
     .cl b{display:block;font-weight:600}.cl span{font-size:13px;color:var(--mute)}
     .cl .pill{margin-left:auto}
@@ -413,8 +416,8 @@ def rejestracja():
 <section class="card">
   <div class="card-h"><div><h1>Załóż konto w VetSpot</h1><span class="pet">{ic("paw","s")}Rudy · pies</span></div>{steps}</div>
   <div class="card-b">
-    <h2 style="font-size:22px;display:inline">Wybierz swoją lecznicę</h2><span class="req">{ic("alert","s")}Wybór jest obowiązkowy</span>
-    <p class="mute" style="margin-top:6px;font-size:14px">Twoja lecznica będzie Twoim opiekunem w VetSpot – poleca produkty, a my wspieramy ją za każdy Twój zakup.</p>
+    <h2 style="font-size:22px;display:inline">Wybierz swoją lecznicę</h2><span class="req">{ic("info","s")}Wybór jest obowiązkowy</span>
+    <p class="mute" style="margin-top:6px;font-size:14px">Twoja lecznica poleca produkty dopasowane do Twojego pupila.</p>
     <div class="find"><div class="input">{ic("search","s")}<b>Poznań, Jeżyce</b></div><a class="btn" style="height:46px" href="#">{ic("locate","s")}Użyj mojej lokalizacji</a></div>
     <div class="res"><div class="list">{lst}</div><div>{mapsvg}</div></div>
     <div class="qr">{ic("qr")}<span><b>Wszedłeś z kodu QR w gabinecie?</b> Lecznica wybierze się sama.</span></div>
@@ -453,7 +456,7 @@ def handlowiec_lecznice():
     for nm, town, code, com, cart, login, last, turn, new in rows:
         name = f'<b>{nm}</b>' + (' <span class="tag new" style="margin-left:6px">NOWA</span>' if new else '')
         trs += f'''<tr class="{'newrow' if new else ''}"><td>{name}<span class="sub">{town}{' · 1 przypisany klient · zweryfikowana przez BOK' if new else ''}</span></td>
-          <td class="mono">{code if not new else '<span class="mute">nadaj kod</span>'}</td><td class="r">{com}</td>
+          <td class="mono">{code if not new else '<span class="mute" style="font-family:Archivo;font-size:13px">nadawany po 1. zamówieniu</span>'}</td><td class="r">{com}</td>
           <td class="r">{zl(cart) if cart else '<span class="mute">—</span>'}</td><td>{login if not new else '<span class="mute">konto nieaktywne</span>'}</td><td>{last}</td>
           <td class="r strong">{zl(turn, False) if turn else '<span class="mute">—</span>'}</td></tr>'''
     css = """
@@ -473,7 +476,7 @@ def handlowiec_lecznice():
     .ctx-sum b{color:var(--ink)}
     """
     note = f'''<div class="os-note" role="alert">
-      <div class="os-a"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4285f4"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>Google Chrome · vetspot.com<span style="margin-left:auto">teraz</span></div>
+      <div class="os-a"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4285f4"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>Google Chrome · vetspot.com<span style="margin-left:auto">10:30</span></div>
       <div class="os-b"><img src="assets/vetspot-logo.svg" alt="" style="width:44px;height:44px;object-fit:contain;background:#fff;border-radius:8px;padding:4px"><div><b>Nowa placówka w Twoim regionie</b><p>Gabinet Weterynaryjny Animal, Gniezno · 1 przypisany klient · zweryfikowana przez BOK</p></div></div>
       <div class="os-btns"><span>Zamknij</span><span class="p">Zobacz</span></div></div>'''
     body = f'''<div class="app" style="position:relative">
@@ -502,7 +505,7 @@ def handlowiec_oferta():
         col = "var(--bad)" if pct > 85 else f"var(--s-{k})"
         lim += f'''<div class="lim"><div class="lim-t"><span class="seller"><i class="sw {k}"></i>{SELLER[k][0]}</span><span class="mono">{pct:.0f}%</span></div>
           <div class="meter"><i style="width:{pct:.0f}%;background:{col}"></i></div>
-          <div class="lim-f"><span>Wykorzystano {zl(u, False)}</span><span>Limit {zl(l, False)}</span></div>{('<div class="lim-w">'+ic("alert","s")+'Ta oferta przekroczy limit o 18 zł</div>') if k=="vet" else ''}</div>'''
+          <div class="lim-f"><span>Wykorzystano {zl(u, False)}</span><span>Limit {zl(l, False)}</span></div></div>'''
 
     def line(kind, key, name, unit, pack, packn, qty):
         val = pack * qty
@@ -516,7 +519,7 @@ def handlowiec_oferta():
         "own": [("pouch", "Hipoalergiczne kąski funkcjonalne na trawienie, 30 szt.", 68.90, 551.20, 8, 2),
                 ("tray", "Karma funkcjonalna na jelita, dzik i jabłko, 400 g", 9.80, 117.60, 12, 4)],
     }
-    wh = {"pet": "Magazyn Nowy Tomyśl", "vet": "Magazyn Opalenica", "own": "Magazyn Poznań"}
+    wh = {"pet": "Magazyn Fenix Pet", "vet": "Magazyn Fenix Vet", "own": "Magazyn marki własnej"}
     offer = ""
     total = 0
     for i, (k, items) in enumerate(groups.items(), 1):
@@ -558,14 +561,14 @@ def handlowiec_oferta():
     .com{display:grid;grid-template-columns:1fr;gap:0}
     .com .row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 20px;border-bottom:1px solid var(--line-2);font-variant-numeric:tabular-nums}
     .com .row b{font-size:18px}
-    .com .row:last-child{border-bottom:0;background:var(--sig-wash)}
+    .com .row:last-child{border-bottom:0;background:#e6eef8}
     """
     body = f'''<div class="app">
 {sidebar("Panel handlowca · region Wielkopolska", REP_MENU, "Oferty", "Marek Zieliński", "Przedstawiciel handlowy", "MZ")}
 <main class="main">
   <div class="head"><div><div class="crumb">Oferty {ic("right","s")} Nowa oferta</div><h1>Przychodnia Weterynaryjna Pod Lipami</h1>
     <div class="meta"><span>Kod kontrahenta <b class="mono" style="font-size:13px">K-WLKP-00412</b></span><span>NIP <b>779-241-18-06</b></span><span>Poznań, ul. Lipowa 12</span></div></div>
-    <a class="btn" href="#">{ic("clinic","s")}Karta lecznicy</a></div>
+    </div>
   <section class="panel lims">{lim}</section>
   <div class="cols">
   <section>
@@ -609,7 +612,7 @@ def strefa():
         g += f'<text x="{cx:.1f}" y="{H-8}" text-anchor="middle" fill="#14181d" font-weight="600">{round(v*0.1)} zł</text>'
     chart = f'<svg viewBox="0 0 {W} {H}" width="100%" style="display:block;font:11.5px Archivo;fill:#5b6673">{g}</svg>'
 
-    tx = [("Ann***", "19.11.2026", 241.00), ("Tom***", "18.11.2026", 412.40), ("Kas***", "18.11.2026", 118.00),
+    tx = [("Ann***", "18.11.2026", 140.00), ("Tom***", "18.11.2026", 412.40), ("Kas***", "18.11.2026", 118.00),
           ("Mar***", "16.11.2026", 342.50)]
     txr = "".join(f'<tr><td><span class="who">{c}</span></td><td>{d}</td><td class="r">{zl(v)}</td><td class="r strong">{zl(v*0.1)}</td></tr>' for c, d, v in tx)
 
@@ -651,7 +654,7 @@ def strefa():
     .iban{flex-direction:column;gap:2px}
     .figs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line-2)}
     .figs .fig{padding:16px 20px;border-right:1px solid var(--line-2)}.figs .fig:last-child{border-right:0}
-    .figs .fig.hl{background:var(--sig-wash)}
+    .figs .fig.hl{background:#e6eef8}
     .legend{display:flex;gap:16px;font-size:13px;color:var(--ink-2)}
     .legend span{display:flex;gap:6px;align-items:center}
     .og{display:flex;gap:10px;align-items:center;padding:10px 20px;background:var(--wash);border-bottom:1.5px dashed var(--line)}.og b{margin-left:auto}
@@ -672,10 +675,10 @@ def strefa():
     """
     body = f'''<header class="zh"><img class="logo" src="assets/vetspot-logo-white.svg" alt="VetSpot">
   <div class="zone">Strefa lecznicy<b>Przychodnia Weterynaryjna Pod Lipami</b></div>
-  <div class="opk"><span class="av">MZ</span><div><small>Twój opiekun</small><b>Marek Zieliński</b></div><span class="ph">{ic("phone","s")}+48 601 248 117</span></div>
+  <div class="opk"><span class="av">MZ</span><div><small>Twój opiekun:</small><b>Marek Zieliński</b></div><span class="ph">{ic("phone","s")}+48 601 248 117</span></div>
 </header>
 <div class="wrap">
-  <div class="top"><div><h1>Dzień dobry, dr Anna Wiśniewska</h1><p class="mute" style="margin-top:4px">Twoja prowizja: 10% od zakupów klientów przypisanych do lecznicy · 186 klientów</p></div>
+  <div class="top"><div><h1>Strefa lecznicy</h1></div>
     <a class="btn navy" style="margin-left:auto" href="#">{ic("upload","s")}Wgraj fakturę prowizyjną</a></div>
   <div class="grid">
     <div class="col">
@@ -683,18 +686,18 @@ def strefa():
       <div class="figs">
         <div class="fig"><small>Prowizja naliczona</small><b>{zl(4286.40)}</b><span class="mute" style="font-size:12.5px">od początku roku</span></div>
         <div class="fig"><small>Prowizja rozliczona</small><b>{zl(3118.20)}</b><span class="mute" style="font-size:12.5px">wypłacona na Twój rachunek</span></div>
-        <div class="fig hl"><small>Do rozliczenia</small><b style="color:var(--sig-ink)">{zl(1168.20)}</b><span style="font-size:12.5px;color:var(--sig-ink)">wgraj fakturę, by otrzymać wypłatę</span></div>
+        <div class="fig hl"><small>Do rozliczenia</small><b style="color:var(--navy)">{zl(1168.20)}</b><span style="font-size:12.5px;color:var(--navy)">wgraj fakturę, by otrzymać wypłatę</span></div>
       </div>
       <div class="panel-h" style="border-bottom:0;padding-bottom:4px"><h2>Obrót i prowizja</h2><div class="legend" style="margin-left:16px"><span><i class="sw" style="background:#9fc0e3"></i>Obrót klientów</span><span class="mute">Prowizja 10% w wierszu pod osią</span></div>
         <div class="r"><div class="seg"><span class="on">Miesiąc</span><span>Kwartał</span><span>Rok</span></div></div></div>
       <div style="padding:4px 16px 12px">{chart}</div>
     </section>
     <section class="panel"><div class="panel-h"><h2>Transakcje z rekomendacji</h2><span class="priv r">{ic("eyeoff","s")}Bez koszyka, adresu i telefonu klienta</span></div>
-      <table class="tbl"><thead><tr><th>Klient</th><th>Data</th><th class="r">Wartość produktów</th><th class="r">Prowizja 10%</th></tr></thead><tbody>{txr}</tbody></table></section>
+      <table class="tbl"><thead><tr><th>Klient</th><th>Data</th><th class="r">Wartość zamówienia</th><th class="r">Prowizja</th></tr></thead><tbody>{txr}</tbody></table></section>
     </div>
     <div class="col">
     <section class="panel">
-      <div class="panel-h"><h2>Oferta od opiekuna do akceptacji</h2><span class="pill sig">Nowa</span></div>
+      <div class="panel-h"><h2>Oferta od opiekuna do akceptacji</h2><span class="pill info">Nowa</span></div>
       <div style="padding:10px 20px;font-size:13px;color:var(--ink-2);border-bottom:1px solid var(--line-2)">Marek Zieliński · 20.11.2026 · ważna do 04.12.2026</div>
       {oi}
       <div class="oa"><div><span class="mute" style="font-size:12.5px;display:block">Razem netto · 3 faktury</span><b class="num">{zl(5259.60)}</b></div><a class="btn primary lg" href="#">{ic("check","s")}Akceptuj</a></div>
@@ -707,13 +710,13 @@ def strefa():
 
 
 PAGES = {
-    "01-pulpit.html": pulpit,
-    "02-koszyk.html": koszyk,
-    "03-zamowienie.html": zamowienie,
-    "04-rejestracja.html": rejestracja,
-    "05-handlowiec-lecznice.html": handlowiec_lecznice,
-    "06-handlowiec-oferta.html": handlowiec_oferta,
-    "07-strefa-lecznicy.html": strefa,
+    "A1-pulpit.html": pulpit,
+    "A2-koszyk.html": koszyk,
+    "A3-zamowienie.html": zamowienie,
+    "A4-rejestracja.html": rejestracja,
+    "A5-handlowiec-lecznice.html": handlowiec_lecznice,
+    "A6-handlowiec-oferta.html": handlowiec_oferta,
+    "A7-strefa-lecznicy.html": strefa,
 }
 
 if __name__ == "__main__":

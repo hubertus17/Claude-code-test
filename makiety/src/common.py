@@ -39,6 +39,7 @@ ICONS = {
     "wallet": '<rect x="3" y="6" width="18" height="14"/><path d="M3 10h18"/><path d="M16 15h2"/>',
     "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     "card": '<rect x="2" y="5" width="20" height="14"/><path d="M2 10h20"/>',
+    "info": '<circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.5v.01"/>',
     "x": '<path d="M6 6l12 12"/><path d="M18 6 6 18"/>',
     "building": '<rect x="5" y="3" width="14" height="18"/><path d="M9 7h2"/><path d="M13 7h2"/><path d="M9 11h2"/><path d="M13 11h2"/><path d="M10 21v-4h4v4"/>',
     "ext": '<path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 14v6H4V6h6"/>',
